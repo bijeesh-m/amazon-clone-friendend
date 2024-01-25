@@ -36,7 +36,7 @@ const Payment = () => {
 
   useEffect(() => {
     addDays();
-  });
+  },[]);
   const handleCardDetailsChange = (e) => {
     setCardDetails({
       ...cardDetails,
