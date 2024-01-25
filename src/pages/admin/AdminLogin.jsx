@@ -57,7 +57,7 @@ const AdminLogin = () => {
           }}
           onSubmit={(values) => {
             axios
-              .post("https://amazon-clone-votv.onrender.com/login", values, {
+              .post("https://amazon-clone-votv.onrender.com/admin/login", values, {
                 withCredentials: true,
               })
               .then((res) => {
