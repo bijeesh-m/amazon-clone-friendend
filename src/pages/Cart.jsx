@@ -35,7 +35,7 @@ const Cart = () => {
     if (token) {
       const user = jwtDecode(token);
       axios
-        .get(`http://localhost:3002/user/cart/${user.userId}`)
+        .get(`https://amazon-clone-votv.onrender.com/user/cart/${user.userId}`)
         .then((res) => {
           console.log(res.data);
           if (!isEqual(cart, res.data.cart)) {
@@ -56,7 +56,7 @@ const Cart = () => {
       const user = jwtDecode(token);
       axios
         .delete(
-          `http://localhost:3002/user/deletecartitem/${prodId}/${user.userId}`,
+          `https://amazon-clone-votv.onrender.com/user/deletecartitem/${prodId}/${user.userId}`,
           {
             withCredential: true,
           }

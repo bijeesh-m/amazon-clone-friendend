@@ -34,7 +34,7 @@ const AdminHome = () => {
 
   const handleLogOut = () => {
     axios
-      .delete("http://localhost:3002/admin/logout", { withCredentials: true })
+      .delete("https://amazon-clone-votv.onrender.com/admin/logout", { withCredentials: true })
       .then((res) => {
         console.log(res);
         toast.success("Logout success");

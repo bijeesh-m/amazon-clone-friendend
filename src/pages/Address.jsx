@@ -19,7 +19,7 @@ const Address = () => {
     if (token) {
       const user = jwtDecode(token);
       axios
-        .get(`http://localhost:3002/user/getaddress/${user.userId}`)
+        .get(`https://amazon-clone-votv.onrender.com/user/getaddress/${user.userId}`)
         .then((res) => {
           const address = res.data;
           setAddress(address);
@@ -79,7 +79,7 @@ const Address = () => {
           const toatId = toast.loading("updating...");
           const user = jwtDecode(token);
           axios
-            .post(`http://localhost:3002/user/address`, { values, user })
+            .post(`https://amazon-clone-votv.onrender.com/user/address`, { values, user })
             .then((res) => {
               toast.success("Address updated", {
                 id: toatId,

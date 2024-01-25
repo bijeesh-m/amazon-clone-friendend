@@ -30,7 +30,7 @@ const Register = () => {
       const toastId = toast.loading("Sending OTP...");
       axios
         .post(
-          "http://localhost:3002/user/register",
+          "https://amazon-clone-votv.onrender.com/user/register",
           { phoneInput, inputValues },
           {
             withCredentials: true,
@@ -76,7 +76,7 @@ const Register = () => {
 
   const onSuccess = (credentialResponse) => {
     axios
-      .post("http://localhost:3002/user/googleauth", credentialResponse, {
+      .post("https://amazon-clone-votv.onrender.com/user/googleauth", credentialResponse, {
         withCredentials: true,
       })
       .then((res) => {
@@ -100,7 +100,7 @@ const Register = () => {
     const vToastId = toast.loading("Verifing OTP...");
     axios
       .post(
-        "http://localhost:3002/user/verify-otp",
+        "https://amazon-clone-votv.onrender.com/user/verify-otp",
         { otp, phoneInput, inputValues },
         { withCredentials: true }
       )

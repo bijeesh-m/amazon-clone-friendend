@@ -14,7 +14,7 @@ const Success = () => {
   const handleOrder = () => {
     if (paymentStatus === "success") {
       axios
-        .post(`http://localhost:3002/user/update-oreders/${user}`, {
+        .post(`https://amazon-clone-votv.onrender.com/user/update-oreders/${user}`, {
           totalPrice,
         })
         .then((res) => {

@@ -7,7 +7,7 @@ const UserOrders = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3002/user/orders`, { withCredentials: true })
+      .get(`https://amazon-clone-votv.onrender.com/user/orders`, { withCredentials: true })
       .then((res) => {
         console.log(res.data);
         setOrders(res.data);

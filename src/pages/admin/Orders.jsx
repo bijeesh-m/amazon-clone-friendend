@@ -6,7 +6,7 @@ const Orders = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3002/admin/orders`, { withCredentials: true })
+      .get(`https://amazon-clone-votv.onrender.com/admin/orders`, { withCredentials: true })
       .then((res) => {
         console.log(res.data);
         setOrders(res.data);

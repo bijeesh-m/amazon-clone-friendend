@@ -13,7 +13,7 @@ const EditProduct = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3002/admin/product/${id}`)
+      .get(`https://amazon-clone-votv.onrender.com/admin/product/${id}`)
       .then((res) => {
         console.log(res.data);
         setProductDetails(res.data);
@@ -63,7 +63,7 @@ const EditProduct = () => {
     } else {
       const toastId = toast.loading("Updating...");
       axios
-        .put(`http://localhost:3002/admin/product/${id}`, productDetails)
+        .put(`https://amazon-clone-votv.onrender.com/admin/product/${id}`, productDetails)
         .then((res) => {
           console.log(res);
           toast.success(res.data, {

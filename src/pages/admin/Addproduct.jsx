@@ -13,7 +13,7 @@ const Addproduct = () => {
   const handleAddProduct = () => {
     const toastId = toast.loading("Adding new product...");
     axios
-      .post("http://localhost:3002/admin/addproduct", productDetails)
+      .post("https://amazon-clone-votv.onrender.com/admin/addproduct", productDetails)
       .then((res) => {
         console.log(res.data);
         toast.success("Product added successfully", {

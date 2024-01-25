@@ -6,7 +6,7 @@ const Users = () => {
   const [users, setUsers] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:3002/admin/users")
+      .get("https://amazon-clone-votv.onrender.com/admin/users")
       .then((res) => {
         console.log(res);
         setUsers(res.data);

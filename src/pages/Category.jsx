@@ -15,7 +15,7 @@ const Category = () => {
   useEffect(() => {
     setSubCategory("");
     axios
-      .get(`http://localhost:3002/user/products/${category}`)
+      .get(`https://amazon-clone-votv.onrender.com/user/products/${category}`)
       .then((res) => {
         setProducts(res.data);
       })
@@ -30,7 +30,7 @@ const Category = () => {
 
   const handleAddToCart = (prodId) => {
     axios
-      .post(`http://localhost:3002/user/addtocart/${prodId}`, user, {
+      .post(`https://amazon-clone-votv.onrender.com/user/addtocart/${prodId}`, user, {
         withCredentials: true,
       })
       .then((res) => {

@@ -15,7 +15,7 @@ const SalesReport = () => {
   const [config, setConfig] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:3002/admin/salesreport")
+      .get("https://amazon-clone-votv.onrender.com/admin/salesreport")
       .then((res) => {
         console.log(res.data);
 

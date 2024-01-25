@@ -11,7 +11,7 @@ const Account = () => {
   const handleLogOut = () => {
     localStorage.clear();
     axios
-      .get("http://localhost:3002/user/logout", { withCredentials: true })
+      .get("https://amazon-clone-votv.onrender.com/user/logout", { withCredentials: true })
       .then((res) => {
         toast.success("Logout success");
         navigate("/");

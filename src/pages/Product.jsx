@@ -14,7 +14,7 @@ const Product = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3002/user/product/${id}`, {
+      .get(`https://amazon-clone-votv.onrender.com/user/product/${id}`, {
         withCredentials: true,
       })
       .then((res) => {
@@ -27,7 +27,7 @@ const Product = () => {
 
   const handleAddToCart = (prodId) => {
     axios
-      .post(`http://localhost:3002/user/addtocart/${prodId}`, user, {
+      .post(`https://amazon-clone-votv.onrender.com/user/addtocart/${prodId}`, user, {
         withCredentials: true,
       })
       .then((res) => {

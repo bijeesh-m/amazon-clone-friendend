@@ -45,7 +45,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3002/user/products", { withCredentials: true })
+      .get("https://amazon-clone-votv.onrender.com/user/products", { withCredentials: true })
       .then((res) => {
         if (!isEqual(products, res.data)) {
           setProducts(res.data);

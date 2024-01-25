@@ -28,7 +28,7 @@ const FormFill = () => {
 
     if (Object.keys(error).length === 0) {
       axios
-        .post("http://localhost:3002/user/googlefill", inputValues, {
+        .post("https://amazon-clone-votv.onrender.com/user/googlefill", inputValues, {
           withCredentials: true,
         })
         .then((res) => {

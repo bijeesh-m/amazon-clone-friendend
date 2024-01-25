@@ -8,7 +8,7 @@ const UserDetails = () => {
   const { id } = useParams();
   useEffect(() => {
     axios
-      .get(`http://localhost:3002/admin/user/${id}`)
+      .get(`https://amazon-clone-votv.onrender.com/admin/user/${id}`)
       .then((res) => {
         setUserDetails(res.data);
         setAddress(res.data.address);

@@ -52,7 +52,7 @@ const Payment = () => {
       const userInfo = jwtDecode(user);
       setUser(userInfo);
       axios
-        .get(`http://localhost:3002/user/getuser/${userInfo.userId}`)
+        .get(`https://amazon-clone-votv.onrender.com/user/getuser/${userInfo.userId}`)
         .then((res) => {
           setAddress(res.data.user);
           const total = res.data.cart.reduce(
@@ -81,7 +81,7 @@ const Payment = () => {
           );
 
           axios
-            .post(`http://localhost:3002/user/payment/${User.userId}`, {
+            .post(`https://amazon-clone-votv.onrender.com/user/payment/${User.userId}`, {
               totalPrice,
             })
             .then(async (res) => {

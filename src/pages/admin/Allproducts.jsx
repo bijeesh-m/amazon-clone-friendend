@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { isEqual } from "lodash";
 
 const Allproducts = () => {
   const [products, setProducts] = useState([]);
@@ -10,7 +9,7 @@ const Allproducts = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3002/admin/products")
+      .get("https://amazon-clone-votv.onrender.com/products")
       .then((res) => {
         setProducts(res.data);
       })
@@ -27,7 +26,7 @@ const Allproducts = () => {
   };
   const handleSelectSubCategory = (selectedSubCategory) => {
     axios
-      .get(`http://localhost:3002/admin/products/${selectedSubCategory}`)
+      .get(`https://amazon-clone-votv.onrender.com/admin/products/${selectedSubCategory}`)
       .then((res) => {
         console.log(res);
         setFdata(res.data);

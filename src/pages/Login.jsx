@@ -20,7 +20,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3002/user/login", inputValues, {
+      .post("https://amazon-clone-votv.onrender.com/user/login", inputValues, {
         withCredentials: true,
       })
       .then((res) => {
