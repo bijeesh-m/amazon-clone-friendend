@@ -117,7 +117,6 @@ const Payment = () => {
     }
   };
 
-  console.log(totalPrice);
 
   return (
     <div>
