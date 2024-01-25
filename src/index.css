@@ -1,13 +1,35 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body::-webkit-scrollbar {
+  display: none;
+}
+.p-l-div::-webkit-scrollbar {
+  display: none;
+}
+.category::-webkit-scrollbar {
+  display: none;
+}
+/* .search-div::-webkit-scrollbar {
+  display: none;
+} */
+
+.arrow-box::before {
+  content: "";
+  position: absolute;
+  top: -9px; /* Adjust this value based on your design */
+  left: 50%;
+  margin-left: -5px; /* Half of the arrow width */
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent white transparent; /* Set the arrow color */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+/* .animate {
+  
+  transition-property: width;
+  transition-duration: 2s;
+  transition-timing-function: linear;
+  transition-delay: 1s;
+} */
