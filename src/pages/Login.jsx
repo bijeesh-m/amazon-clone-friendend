@@ -28,7 +28,6 @@ const Login = () => {
         console.log(res);
 
         if (res.data.data === "success") {
-          Cookies.set("userjwt", res.data.token, { path: "/" });
           localStorage.setItem("user", res.data.token);
           const userInfo = JSON.stringify(res.data.user);
           localStorage.setItem("userInfo", userInfo);
