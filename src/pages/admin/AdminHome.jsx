@@ -29,7 +29,9 @@ const AdminHome = () => {
     const admin = jwtDecode(jwtToken);
     const email = admin.userId.split("@")[0].toUpperCase();
     Admin = email;
+    console.log(email);
   } else {
+    console.log("errrorr");
   }
 
   const handleLogOut = () => {
