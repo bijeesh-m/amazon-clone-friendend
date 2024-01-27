@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import Cookies from "js-cookie";
 import toast, { Toaster } from "react-hot-toast";
 import { myContext } from "../App";
 
@@ -27,6 +28,7 @@ const Login = () => {
         console.log(res);
 
         if (res.data.data === "success") {
+          Cookies.set("userjwt", res.data.token, { path: "/" });
           localStorage.setItem("user", res.data.token);
           const userInfo = JSON.stringify(res.data.user);
           localStorage.setItem("userInfo", userInfo);
