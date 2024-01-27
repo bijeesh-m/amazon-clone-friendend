@@ -26,7 +26,9 @@ const Header = () => {
     if (token) {
       const userInfo = jwtDecode(token);
       axios
-        .get(`http://localhost:3002/user/cartcount/${userInfo.userId}`)
+        .get(
+          `https://amazon-clone-votv.onrender.com/user/cartcount/${userInfo.userId}`
+        )
         .then((res) => {
           setCartCount(res.data.data);
           setAddress(res.data.user.address);
@@ -147,7 +149,7 @@ const Header = () => {
           </div>
         </div>
         <div className="order">
-          <Link to={'/orders'}>
+          <Link to={"/orders"}>
             <div>
               <div className=" text-[14px]">Returns</div>
               <div className="font-bold text-[14px]">& Orders</div>
