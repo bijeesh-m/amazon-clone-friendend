@@ -39,7 +39,7 @@ const Category = () => {
       })
       .catch((err) => {
         console.log(err);
-        if (err.response.data.status === "Unauthorized") {
+        if (err.response.data === "Unauthorized") {
           toast.error("Please login to continue");
         } else {
           toast.error("Item already in a cart");
