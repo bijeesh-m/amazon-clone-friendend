@@ -37,7 +37,6 @@ const Cart = () => {
       axios
         .get(`https://amazon-clone-votv.onrender.com/user/cart/${user.userId}`)
         .then((res) => {
-          console.log(res.data);
           if (!isEqual(cart, res.data.cart)) {
             setCart(res.data.cart);
           }
@@ -63,7 +62,6 @@ const Cart = () => {
         )
         .then((res) => {
           setCartCount(cartCount + 1);
-          console.log(res);
         })
         .catch((err) => console.log(err));
     }
@@ -162,7 +160,6 @@ const Cart = () => {
             </Link>
           </button>
         </div>
-        
       </div>
     </div>
   );

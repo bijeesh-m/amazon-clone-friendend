@@ -9,7 +9,6 @@ const UserOrders = () => {
     axios
       .get(`https://amazon-clone-votv.onrender.com/user/orders`, { withCredentials: true })
       .then((res) => {
-        console.log(res.data);
         setOrders(res.data);
       })
       .catch((err) => {

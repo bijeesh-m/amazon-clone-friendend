@@ -33,7 +33,6 @@ const DeleteProducts = () => {
     axios
       .get(`https://amazon-clone-votv.onrender.com/admin/products/${selectedSubCategory}`)
       .then((res) => {
-        console.log(res);
         setFdata(res.data);
       })
       .catch((err) => {

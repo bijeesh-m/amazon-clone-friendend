@@ -76,17 +76,19 @@ const Register = () => {
 
   const onSuccess = (credentialResponse) => {
     axios
-      .post("https://amazon-clone-votv.onrender.com/user/googleauth", credentialResponse, {
-        withCredentials: true,
-      })
+      .post(
+        "https://amazon-clone-votv.onrender.com/user/googleauth",
+        credentialResponse,
+        {
+          withCredentials: true,
+        }
+      )
       .then((res) => {
         if (res.data.data === "success") {
           toast.success("Login Success");
-          console.log("user found");
           localStorage.setItem("user", res.data.token);
           navigate("/");
         } else {
-          console.log(res.data.data);
           localStorage.setItem("accToken", credentialResponse.credential);
           navigate("/form");
         }
@@ -239,13 +241,7 @@ const Register = () => {
               <GoogleOAuthProvider
                 clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
               >
-                <GoogleLogin
-                  width={310}
-                  onSuccess={onSuccess}
-                  onError={() => {
-                    console.log("Login Failed");
-                  }}
-                />
+                <GoogleLogin width={310} onSuccess={onSuccess} />
               </GoogleOAuthProvider>
             </div>
 

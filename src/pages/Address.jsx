@@ -47,7 +47,6 @@ const Address = () => {
         validate={(values) => {
           const errors = {};
           if (!values.name) {
-            console.log(values.name);
             errors.name = "Required";
           } else if (values.name.length < 3) {
             errors.name = "minimum 3 characters required";

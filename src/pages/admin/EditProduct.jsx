@@ -5,7 +5,6 @@ import toast from "react-hot-toast";
 const EditProduct = () => {
   const [productDetails, setProductDetails] = useState({});
   const [subcategories, setSubcategories] = useState([]);
-  console.log(productDetails);
 
   const { id } = useParams();
 
@@ -15,7 +14,6 @@ const EditProduct = () => {
     axios
       .get(`https://amazon-clone-votv.onrender.com/admin/product/${id}`)
       .then((res) => {
-        console.log(res.data);
         setProductDetails(res.data);
         updateSubcategories(res.data.category); // Update subcategories initially
       })
@@ -35,24 +33,16 @@ const EditProduct = () => {
     }
   };
 
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setProductDetails((prevProductDetails) => ({
-  //     ...prevProductDetails,
-  //     [name]: value,
-  //   }));
-  // };
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    // Update subcategory when category changes
     if (name === "category") {
       setProductDetails({
         ...productDetails,
         [name]: value,
-        subcategory: "", // Reset subcategory when category changes
+        subcategory: "",
       });
-      updateSubcategories(value); // Update subcategories when category changes
+      updateSubcategories(value);
     } else {
       setProductDetails({ ...productDetails, [name]: value });
     }
@@ -63,9 +53,11 @@ const EditProduct = () => {
     } else {
       const toastId = toast.loading("Updating...");
       axios
-        .put(`https://amazon-clone-votv.onrender.com/admin/product/${id}`, productDetails)
+        .put(
+          `https://amazon-clone-votv.onrender.com/admin/product/${id}`,
+          productDetails
+        )
         .then((res) => {
-          console.log(res);
           toast.success(res.data, {
             id: toastId,
           });

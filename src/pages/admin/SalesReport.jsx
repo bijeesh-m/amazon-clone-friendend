@@ -10,18 +10,11 @@ import Chart from "react-apexcharts";
 
 const SalesReport = () => {
   const [totalSale, setTotalSale] = useState({});
-  // const [month, setMonth] = useState([]);
-  // const [month, setMonth] = useState([]);
-  const [config, setConfig] = useState([]);
   useEffect(() => {
     axios
       .get("https://amazon-clone-votv.onrender.com/admin/salesreport")
       .then((res) => {
-        console.log(res.data);
-
         setTotalSale(res.data);
-        // setTotalSale(res.data.sales);
-        // setMonth(res.data.month);
       })
       .catch((err) => {
         console.log(err);

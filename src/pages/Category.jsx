@@ -10,7 +10,6 @@ const Category = () => {
   const [subCategory, setSubCategory] = useState("");
   const { category } = useParams();
 
-  console.log(category, subCategory);
 
   useEffect(() => {
     setSubCategory("");
@@ -20,7 +19,6 @@ const Category = () => {
         setProducts(res.data);
       })
       .catch((err) => {
-        console.log(err);
       });
   }, [category]);
 
@@ -38,7 +36,6 @@ const Category = () => {
         toast.success("Item added to cart");
       })
       .catch((err) => {
-        console.log(err);
         if (err.response.data === "Unauthorized") {
           toast.error("Please login to continue");
         } else {

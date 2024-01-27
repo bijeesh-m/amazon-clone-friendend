@@ -8,21 +8,21 @@ const Success = () => {
   const user = urlParams.get("user");
   const total = urlParams.get("total");
   const totalPrice = total;
-  console.log(user);
   const navigate = useNavigate();
 
   const handleOrder = () => {
     if (paymentStatus === "success") {
       axios
-        .post(`https://amazon-clone-votv.onrender.com/user/update-oreders/${user}`, {
-          totalPrice,
-        })
+        .post(
+          `https://amazon-clone-votv.onrender.com/user/update-oreders/${user}`,
+          {
+            totalPrice,
+          }
+        )
         .then((res) => {
           navigate("/");
         })
         .catch((err) => console.log(err));
-    } else {
-      console.log("Payment failed or canceled.");
     }
   };
 

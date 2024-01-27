@@ -25,7 +25,6 @@ const Login = () => {
         withCredentials: true,
       })
       .then((res) => {
-        console.log(res);
 
         if (res.data.data === "success") {
           localStorage.setItem("user", res.data.token);
@@ -38,7 +37,6 @@ const Login = () => {
       })
       .catch((err) => {
         toast.error(err.response.data);
-        console.log(err.response);
       });
   };
 

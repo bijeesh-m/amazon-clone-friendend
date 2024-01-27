@@ -18,22 +18,19 @@ const Allproducts = () => {
       });
   }, []);
 
-  console.log(fData);
-
   const handleSelectCategory = (selectedCategory) => {
     setCategory(selectedCategory);
     setFdata(products.filter((prod) => prod.category === selectedCategory));
   };
   const handleSelectSubCategory = (selectedSubCategory) => {
     axios
-      .get(`https://amazon-clone-votv.onrender.com/admin/products/${selectedSubCategory}`)
+      .get(
+        `https://amazon-clone-votv.onrender.com/admin/products/${selectedSubCategory}`
+      )
       .then((res) => {
-        console.log(res);
         setFdata(res.data);
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch((err) => {});
   };
 
   return (

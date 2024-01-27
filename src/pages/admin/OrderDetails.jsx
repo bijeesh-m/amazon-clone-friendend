@@ -13,7 +13,6 @@ const OrderDetails = () => {
     axios
       .get(`https://amazon-clone-votv.onrender.com/admin/orders/${id}`)
       .then((res) => {
-        console.log(res.data);
         setOrder(res.data);
         setProducts(res.data.products);
         setAddress(res.data.user.address);
@@ -28,7 +27,6 @@ const OrderDetails = () => {
     axios
       .put(`https://amazon-clone-votv.onrender.com/admin/order/${orderId}`, { orderStatus })
       .then((res) => {
-        console.log(res.data);
         toast.success(res.data);
       })
       .catch((err) => {

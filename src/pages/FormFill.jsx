@@ -33,7 +33,6 @@ const FormFill = () => {
         })
         .then((res) => {
           if (res.data.data === "success") {
-            console.log("success");
             toast.success("Registration success");
             localStorage.setItem("user",res.data.token)
             navigate("/");
@@ -41,7 +40,6 @@ const FormFill = () => {
         })
         .catch((err) => {
           toast.error("User already exist");
-          console.log(err.message);
         });
     }
   };

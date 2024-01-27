@@ -8,7 +8,6 @@ const Users = () => {
     axios
       .get("https://amazon-clone-votv.onrender.com/admin/users")
       .then((res) => {
-        console.log(res);
         setUsers(res.data);
       })
       .catch((err) => {

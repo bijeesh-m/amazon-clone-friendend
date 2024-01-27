@@ -8,7 +8,6 @@ const LogoutButton = () => {
     /*global google*/
     const email = user.email;
     google.accounts.id.revoke("bijigamer79@gmail.com", (done) => {
-      console.log("consent revoked");
     });
   };
   return (

@@ -106,7 +106,6 @@ const Payment = () => {
   };
   const handleApplyCoupen = () => {
     const isValid = coupen.find((code) => code.code === coupenCode);
-    console.log(isValid);
     if (isValid) {
       setDiscount(isValid.description);
       const discound = (totalPrice * isValid.discountValue) / 100;

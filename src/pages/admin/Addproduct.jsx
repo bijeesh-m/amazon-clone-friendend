@@ -13,9 +13,11 @@ const Addproduct = () => {
   const handleAddProduct = () => {
     const toastId = toast.loading("Adding new product...");
     axios
-      .post("https://amazon-clone-votv.onrender.com/admin/addproduct", productDetails)
+      .post(
+        "https://amazon-clone-votv.onrender.com/admin/addproduct",
+        productDetails
+      )
       .then((res) => {
-        console.log(res.data);
         toast.success("Product added successfully", {
           id: toastId,
         });
@@ -25,7 +27,6 @@ const Addproduct = () => {
       });
   };
 
-  console.log(productDetails);
   return (
     <div>
       <div className=" min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
@@ -142,7 +143,7 @@ const Addproduct = () => {
                   </div>
                 </div>
                 <div className="pt-4 flex items-center space-x-4">
-                  <Link className=" w-full" to={'/adminHome/dashboard'}>
+                  <Link className=" w-full" to={"/adminHome/dashboard"}>
                     <button className="flex border justify-center items-center w-full  text-gray-900 px-4 py-3 rounded-md focus:outline-none">
                       Cancel
                     </button>
