@@ -38,7 +38,7 @@ const Category = () => {
         toast.success("Item added to cart");
       })
       .catch((err) => {
-        console.log(err.response);
+        console.log(err);
         if (err.response.data.status === "Unauthorized") {
           toast.error("Please login to continue");
         } else {
