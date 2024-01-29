@@ -36,7 +36,7 @@ const Payment = () => {
 
   useEffect(() => {
     addDays();
-  },[]);
+  }, []);
   const handleCardDetailsChange = (e) => {
     setCardDetails({
       ...cardDetails,
@@ -52,7 +52,9 @@ const Payment = () => {
       const userInfo = jwtDecode(user);
       setUser(userInfo);
       axios
-        .get(`https://amazon-clone-votv.onrender.com/user/getuser/${userInfo.userId}`)
+        .get(
+          `https://amazon-clone-votv.onrender.com/user/getuser/${userInfo.userId}`
+        )
         .then((res) => {
           setAddress(res.data.user);
           const total = res.data.cart.reduce(
@@ -77,13 +79,16 @@ const Payment = () => {
         if (address) {
           const toastId = toast.loading("Payment processing");
           const stripe = await loadStripe(
-            "pk_test_51OETquSEvbsKeMh2TdGZKZccKNThIJHdhhx4kAZfzT3LzmBeJK3jCkTFT1DdkOv6lq8gIT2vZBCSNhXmhoo4l1CT00OD9X0QgO"
+            process.env.REACT_APP_STRIPE_SECRET_KEY
           );
 
           axios
-            .post(`https://amazon-clone-votv.onrender.com/user/payment/${User.userId}`, {
-              totalPrice,
-            })
+            .post(
+              `https://amazon-clone-votv.onrender.com/user/payment/${User.userId}`,
+              {
+                totalPrice,
+              }
+            )
             .then(async (res) => {
               stripe
                 .redirectToCheckout({ sessionId: res.data })
@@ -109,13 +114,12 @@ const Payment = () => {
     if (isValid) {
       setDiscount(isValid.description);
       const discound = (totalPrice * isValid.discountValue) / 100;
-      setTotalPrice(Math.round(totalPrice - discound ));
+      setTotalPrice(Math.round(totalPrice - discound));
       setDiv(true);
     } else {
       toast.error("Invslid coupen");
     }
   };
-
 
   return (
     <div>
@@ -437,14 +441,14 @@ const Payment = () => {
             <div className="text-[18px] font-semibold">Order Summary</div>
             <div className=" flex justify-between text-[14px]">
               <p>Items:</p>
-              <p> {(normalPrice).toLocaleString()}</p>
+              <p> {normalPrice.toLocaleString()}</p>
             </div>
             {div && (
               <div className=" flex justify-between text-[14px]">
                 <p>Discounted price:</p>
                 <div className=" flex space-x-1">
                   <del> ₹{normalPrice}</del>
-                  <p>₹{Math.round(totalPrice-40)}</p>
+                  <p>₹{Math.round(totalPrice - 40)}</p>
                 </div>
               </div>
             )}
