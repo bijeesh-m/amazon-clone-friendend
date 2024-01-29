@@ -1,11 +1,13 @@
 import React from "react";
+import Carousel from "../components/Carousel";
 
 const Home = () => {
   
   return (
     <>
       <div className="home-div">
-        <div className="brodcast-div ">
+        {/* <div className="brodcast-div "> */}
+        <Carousel/>
           <div className="sugession-div ">
             <div className="sugession-div-text">
               <h3 className=" m-3 text-[21px] font-bold ">Keep shoping</h3>
@@ -167,7 +169,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-        </div>
+        {/* </div> */}
         <div className="w-[95%] h-[380px] mt-[200px] bg-white m-8 p-3">
           <div className="flex items-center">
             <p className=" text-[21px] mx-3 font-bold">Today' Deals</p>
