@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
-import { jwtDecode } from "jwt-decode";
 import axios from "axios";
 import toast from "react-hot-toast";
 const AdminHome = () => {
@@ -31,6 +30,7 @@ const AdminHome = () => {
         withCredentials: true,
       })
       .then((res) => {
+        
         toast.success("Logout success");
         navigate("/adminlogin");
       })

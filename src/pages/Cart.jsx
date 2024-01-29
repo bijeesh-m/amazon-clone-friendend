@@ -18,7 +18,7 @@ const Cart = () => {
       const user = jwtDecode(token);
       axios
         .put(
-          `http://localhost:3002/user/updatecartquantity/${prodId}/${user.userId}`,
+          `https://amazon-clone-votv.onrender.com/user/updatecartquantity/${prodId}/${user.userId}`,
           { quantity: newQuantity },
           {
             withCredentials: true,
