@@ -4,7 +4,7 @@ import HomeCarousel from "../components/Carousel";
 const Home = () => {
   return (
     <>
-      <HomeCarousel />
+      <HomeCarousel  className=" flex"/>
       <div className="home-div">
         {/* <div className="brodcast-div "> */}
         <div className="sugession-div ">
