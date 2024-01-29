@@ -12,6 +12,7 @@ const Success = () => {
 
   const handleOrder = () => {
     if (paymentStatus === "success") {
+      console.log(paymentStatus);
       axios
         .post(
           `https://amazon-clone-votv.onrender.com/user/update-oreders/${user}`,
