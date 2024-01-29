@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import axios from "axios";
@@ -9,31 +9,19 @@ const AdminHome = () => {
   const toggleSidebar = () => {
     setShowSidebar(!showSidebar);
   };
-  let Admin = "";
-  function getCookie(name) {
-    const cookies = document.cookie.split(" ");
-    console.log(cookies);
-    if (cookies.length > 0) {
-      for (let i = 0; i < cookies.length; i++) {
-        const cookie = cookies[i].trim();
-        if (cookie.startsWith(name + "=")) {
-          return cookie.substring(name.length + 1);
-        }
-      }
-      return null;
-    }
-  }
 
-  const jwtToken = getCookie("adminjwt");
-
-  if (jwtToken) {
-    const admin = jwtDecode(jwtToken);
-    const email = admin.userId.split("@")[0].toUpperCase();
-    Admin = email;
-    console.log(email);
-  } else {
-    console.log(jwtToken);
-  }
+  useEffect(() => {
+    axios
+      .get("https://amazon-clone-votv.onrender.com/admin/getadmin", {
+        withCredentials: true,
+      })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   const handleLogOut = () => {
     axios
@@ -109,7 +97,7 @@ const AdminHome = () => {
             </div>
             <div className="flex items-center pr-4">
               <button className="flex space-x-2 items-center text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700">
-                <p>{Admin}</p>
+                <p>admin</p>
                 <div className=" flex justify-center items-center p-2  border w-10 h-10 rounded-full">
                   <img
                     src="https://res.cloudinary.com/dunf6rko6/image/upload/v1705468276/3935309_user_admin_icon_nt0ahn.svg"
