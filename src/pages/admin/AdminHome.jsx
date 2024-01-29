@@ -5,6 +5,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 const AdminHome = () => {
   const [showSidebar, setShowSidebar] = useState(false);
+  const [admin, setAdmin] = useState(false);
   const navigate = useNavigate();
   const toggleSidebar = () => {
     setShowSidebar(!showSidebar);
@@ -17,6 +18,7 @@ const AdminHome = () => {
       })
       .then((res) => {
         console.log(res);
+        setAdmin(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -97,7 +99,7 @@ const AdminHome = () => {
             </div>
             <div className="flex items-center pr-4">
               <button className="flex space-x-2 items-center text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700">
-                <p>admin</p>
+                <p>{admin.userId}</p>
                 <div className=" flex justify-center items-center p-2  border w-10 h-10 rounded-full">
                   <img
                     src="https://res.cloudinary.com/dunf6rko6/image/upload/v1705468276/3935309_user_admin_icon_nt0ahn.svg"
