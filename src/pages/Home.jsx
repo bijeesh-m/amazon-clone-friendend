@@ -2,173 +2,170 @@ import React from "react";
 import HomeCarousel from "../components/Carousel";
 
 const Home = () => {
-  
   return (
     <>
+      <HomeCarousel />
       <div className="home-div">
         {/* <div className="brodcast-div "> */}
-        <HomeCarousel/>
-          <div className="sugession-div ">
-            <div className="sugession-div-text">
-              <h3 className=" m-3 text-[21px] font-bold ">Keep shoping</h3>
-              <div className="flex flex-wrap justify-evenly   items-center">
-                <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  h-[140px] ">
-                  <img
-                    className=" w-[108px] "
-                    src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665520/keybord_vw13mv.jpg"
-                    alt="keyboard"
-                  />
-                  <p className="text-[13px]">
-                    Zebronics ZEB 3 <br />
-                    Keybord and Mouse
-                  </p>
-                </div>
-                <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  h-[140px] ">
-                  <img
-                    className=" w-[108px] "
-                    src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665520/keybord_vw13mv.jpg"
-                    alt="keyboard"
-                  />
-                  <p className="text-[13px]">
-                    Zebronics ZEB 3 <br /> Keybord and Mouse
-                  </p>
-                </div>
-                <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  h-[140px] ">
-                  <img
-                    className=" w-[108px] "
-                    src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665520/keybord_vw13mv.jpg"
-                    alt="keyboard"
-                  />
-                  <p className="text-[13px]">
-                    Zebronics ZEB 3 <br /> Keybord and Mouse
-                  </p>
-                </div>
-                <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  h-[140px] ">
-                  <img
-                    className=" w-[108px] "
-                    src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665520/keybord_vw13mv.jpg"
-                    alt="keyboard"
-                  />
-                  <p className="text-[13px]">
-                    Zebronics ZEB 3 <br /> Keybord and Mouse
-                  </p>
-                </div>
+        <div className="sugession-div ">
+          <div className="sugession-div-text">
+            <h3 className=" m-3 text-[21px] font-bold ">Keep shoping</h3>
+            <div className="flex flex-wrap justify-evenly   items-center">
+              <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  h-[140px] ">
+                <img
+                  className=" w-[108px] "
+                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665520/keybord_vw13mv.jpg"
+                  alt="keyboard"
+                />
+                <p className="text-[13px]">
+                  Zebronics ZEB 3 <br />
+                  Keybord and Mouse
+                </p>
               </div>
-            </div>
-            <div className="sugession-div-text">
-              <h3 className=" m-3 text-[21px] font-bold ">
-                Kitchen appliances
-              </h3>
-              <div className="flex flex-wrap justify-evenly   items-center">
-                <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  h-[140px] ">
-                  <img
-                    className=" w-[108px] "
-                    src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665520/kitchen_bnrlug.webp"
-                    alt="Kitchen"
-                  />
-                  <p className="text-[13px]">Kitchen</p>
-                </div>
-                <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  h-[140px] ">
-                  <img
-                    className=" w-[108px] "
-                    src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665520/kitchen_bnrlug.webp"
-                    alt="Kitchen"
-                  />
-                  <p className="text-[13px]">Kitchen</p>
-                </div>
-                <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  h-[140px] ">
-                  <img
-                    className=" w-[108px] "
-                    src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665520/kitchen_bnrlug.webp"
-                    alt="Kitchen"
-                  />
-                  <p className="text-[13px]">Kitchen</p>
-                </div>
-                <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  h-[140px] ">
-                  <img
-                    className=" w-[108px] "
-                    src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665520/kitchen_bnrlug.webp"
-                    alt="Kitchen"
-                  />
-                  <p className="text-[13px]">Kitchen</p>
-                </div>
+              <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  h-[140px] ">
+                <img
+                  className=" w-[108px] "
+                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665520/keybord_vw13mv.jpg"
+                  alt="keyboard"
+                />
+                <p className="text-[13px]">
+                  Zebronics ZEB 3 <br /> Keybord and Mouse
+                </p>
               </div>
-            </div>
-            <div className="sugession-div-text">
-              <h3 className=" m-3 text-[21px] font-bold ">Smart Phones</h3>
-              <div className="flex flex-wrap justify-evenly   items-center">
-                <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly items-center  h-[140px] ">
-                  <img
-                    className=" w-[70px] "
-                    src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665520/mobile_xtzwho.webp"
-                    alt="keyboard"
-                  />
-                  <p className="text-[13px]">Samsung M34 5G</p>
-                </div>
-                <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly items-center  h-[140px] ">
-                  <img
-                    className=" w-[70px] "
-                    src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665520/mobile_xtzwho.webp"
-                    alt="keyboard"
-                  />
-                  <p className="text-[13px]">Samsung M34 5G</p>
-                </div>
-                <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly items-center   h-[140px] ">
-                  <img
-                    className=" w-[70px] "
-                    src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665520/mobile_xtzwho.webp"
-                    alt="keyboard"
-                  />
-                  <p className="text-[13px]">Samsung M34 5G</p>
-                </div>
-                <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly items-center  h-[140px] ">
-                  <img
-                    className=" w-[70px] "
-                    src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665520/mobile_xtzwho.webp"
-                    alt="keyboard"
-                  />
-                  <p className="text-[13px]">Samsung M34 5G</p>
-                </div>
+              <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  h-[140px] ">
+                <img
+                  className=" w-[108px] "
+                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665520/keybord_vw13mv.jpg"
+                  alt="keyboard"
+                />
+                <p className="text-[13px]">
+                  Zebronics ZEB 3 <br /> Keybord and Mouse
+                </p>
               </div>
-            </div>
-            <div className="sugession-div-text">
-              <h3 className=" m-3 text-[21px] font-bold ">Fasion</h3>
-              <div className="flex flex-wrap justify-evenly   items-center">
-                <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  h-[140px] ">
-                  <img
-                    className=" w-[90px] h-[90px] "
-                    src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665514/fasion_qotyzn.jpg"
-                    alt="keyboard"
-                  />
-                  <p className="text-[13px]">Fasion</p>
-                </div>
-                <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  h-[140px] ">
-                  <img
-                    className=" w-[90px] h-[90px] "
-                    src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665514/fasion_qotyzn.jpg"
-                    alt="keyboard"
-                  />
-                  <p className="text-[13px]">Fasion</p>
-                </div>
-                <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  h-[140px] ">
-                  <img
-                    className=" w-[90px] h-[90px] "
-                    src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665514/fasion_qotyzn.jpg"
-                    alt="keyboard"
-                  />
-                  <p className="text-[13px]">Fasion</p>
-                </div>
-                <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  h-[140px] ">
-                  <img
-                    className=" w-[90px] h-[90px] "
-                    src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665514/fasion_qotyzn.jpg"
-                    alt="keyboard"
-                  />
-                  <p className="text-[13px]">Fasion</p>
-                </div>
+              <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  h-[140px] ">
+                <img
+                  className=" w-[108px] "
+                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665520/keybord_vw13mv.jpg"
+                  alt="keyboard"
+                />
+                <p className="text-[13px]">
+                  Zebronics ZEB 3 <br /> Keybord and Mouse
+                </p>
               </div>
             </div>
           </div>
+          <div className="sugession-div-text">
+            <h3 className=" m-3 text-[21px] font-bold ">Kitchen appliances</h3>
+            <div className="flex flex-wrap justify-evenly   items-center">
+              <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  h-[140px] ">
+                <img
+                  className=" w-[108px] "
+                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665520/kitchen_bnrlug.webp"
+                  alt="Kitchen"
+                />
+                <p className="text-[13px]">Kitchen</p>
+              </div>
+              <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  h-[140px] ">
+                <img
+                  className=" w-[108px] "
+                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665520/kitchen_bnrlug.webp"
+                  alt="Kitchen"
+                />
+                <p className="text-[13px]">Kitchen</p>
+              </div>
+              <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  h-[140px] ">
+                <img
+                  className=" w-[108px] "
+                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665520/kitchen_bnrlug.webp"
+                  alt="Kitchen"
+                />
+                <p className="text-[13px]">Kitchen</p>
+              </div>
+              <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  h-[140px] ">
+                <img
+                  className=" w-[108px] "
+                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665520/kitchen_bnrlug.webp"
+                  alt="Kitchen"
+                />
+                <p className="text-[13px]">Kitchen</p>
+              </div>
+            </div>
+          </div>
+          <div className="sugession-div-text">
+            <h3 className=" m-3 text-[21px] font-bold ">Smart Phones</h3>
+            <div className="flex flex-wrap justify-evenly   items-center">
+              <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly items-center  h-[140px] ">
+                <img
+                  className=" w-[70px] "
+                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665520/mobile_xtzwho.webp"
+                  alt="keyboard"
+                />
+                <p className="text-[13px]">Samsung M34 5G</p>
+              </div>
+              <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly items-center  h-[140px] ">
+                <img
+                  className=" w-[70px] "
+                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665520/mobile_xtzwho.webp"
+                  alt="keyboard"
+                />
+                <p className="text-[13px]">Samsung M34 5G</p>
+              </div>
+              <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly items-center   h-[140px] ">
+                <img
+                  className=" w-[70px] "
+                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665520/mobile_xtzwho.webp"
+                  alt="keyboard"
+                />
+                <p className="text-[13px]">Samsung M34 5G</p>
+              </div>
+              <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly items-center  h-[140px] ">
+                <img
+                  className=" w-[70px] "
+                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665520/mobile_xtzwho.webp"
+                  alt="keyboard"
+                />
+                <p className="text-[13px]">Samsung M34 5G</p>
+              </div>
+            </div>
+          </div>
+          <div className="sugession-div-text">
+            <h3 className=" m-3 text-[21px] font-bold ">Fasion</h3>
+            <div className="flex flex-wrap justify-evenly   items-center">
+              <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  h-[140px] ">
+                <img
+                  className=" w-[90px] h-[90px] "
+                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665514/fasion_qotyzn.jpg"
+                  alt="keyboard"
+                />
+                <p className="text-[13px]">Fasion</p>
+              </div>
+              <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  h-[140px] ">
+                <img
+                  className=" w-[90px] h-[90px] "
+                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665514/fasion_qotyzn.jpg"
+                  alt="keyboard"
+                />
+                <p className="text-[13px]">Fasion</p>
+              </div>
+              <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  h-[140px] ">
+                <img
+                  className=" w-[90px] h-[90px] "
+                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665514/fasion_qotyzn.jpg"
+                  alt="keyboard"
+                />
+                <p className="text-[13px]">Fasion</p>
+              </div>
+              <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  h-[140px] ">
+                <img
+                  className=" w-[90px] h-[90px] "
+                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665514/fasion_qotyzn.jpg"
+                  alt="keyboard"
+                />
+                <p className="text-[13px]">Fasion</p>
+              </div>
+            </div>
+          </div>
+        </div>
         {/* </div> */}
         <div className="w-[95%] h-[380px] mt-[200px] bg-white m-8 p-3">
           <div className="flex items-center">
