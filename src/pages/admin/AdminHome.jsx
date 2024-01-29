@@ -31,7 +31,7 @@ const AdminHome = () => {
     Admin = email;
     console.log(email);
   } else {
-    console.log("errrorr");
+    console.log(jwtToken);
   }
 
   const handleLogOut = () => {
