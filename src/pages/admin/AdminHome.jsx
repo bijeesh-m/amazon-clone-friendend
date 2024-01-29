@@ -12,6 +12,7 @@ const AdminHome = () => {
   let Admin = "";
   function getCookie(name) {
     const cookies = document.cookie.split(" ");
+    console.log(cookies);
     if (cookies.length > 0) {
       for (let i = 0; i < cookies.length; i++) {
         const cookie = cookies[i].trim();
