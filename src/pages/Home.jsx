@@ -1,5 +1,5 @@
 import React from "react";
-import Carousel from "../components/Carousel";
+import HomeCarousel from "../components/Carousel";
 
 const Home = () => {
   
@@ -7,7 +7,7 @@ const Home = () => {
     <>
       <div className="home-div">
         {/* <div className="brodcast-div "> */}
-        <Carousel/>
+        <HomeCarousel/>
           <div className="sugession-div ">
             <div className="sugession-div-text">
               <h3 className=" m-3 text-[21px] font-bold ">Keep shoping</h3>

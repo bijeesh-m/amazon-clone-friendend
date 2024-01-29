@@ -1,7 +1,7 @@
 import React from "react";
 import { Carousel } from "@material-tailwind/react";
 
-const Carousel = () => {
+const HomeCarousel = () => {
   return (
     <Carousel className="rounded-xl">
       <img
@@ -23,4 +23,4 @@ const Carousel = () => {
   );
 };
 
-export default Carousel;
+export default HomeCarousel;
