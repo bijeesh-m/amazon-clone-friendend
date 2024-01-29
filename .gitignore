@@ -10,7 +10,6 @@
 # production
 /build
 
-# Ignore environment files
 .env
 
 # misc
