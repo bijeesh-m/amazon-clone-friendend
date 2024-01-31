@@ -14,7 +14,6 @@ const Cart = () => {
   const { cartCount, setCartCount, user } = useContext(myContext);
 
   const handleQuantityChange = (e, prodId) => {
-    const toastId = toast.loading("Loading...");
 
     const newQuantity = e.target.value;
     if (token) {
@@ -29,7 +28,6 @@ const Cart = () => {
         )
         .then((res) => {
           setCart(res.data);
-          toast.remove(toastId);
         })
         .catch((err) => console.log(err));
     }
