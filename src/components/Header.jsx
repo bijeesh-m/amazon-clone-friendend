@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { HiMagnifyingGlass } from "react-icons/hi2";
 import { myContext } from "../App";
 import { jwtDecode } from "jwt-decode";
 import axios from "axios";
@@ -47,7 +48,7 @@ const Header = () => {
   };
   return (
     <div>
-      <div className=" sticky header-main-div">
+      <div className="  header-main-div">
         <div className="flex items-center">
           <div className=" ">
             <Link to={"/"}>
@@ -78,24 +79,22 @@ const Header = () => {
             </div>
           </div>
         </div>
-        <div className=" flex flex-col justify-center items-center">
-          <div className="search-bar ">
+        <div className=" flex flex-col justify-center items-center group w-[40%]">
+          <div className=" flex h-10 w-full bg-[#febd69] rounded-[4px]">
             <div className="select-div">All</div>
             <input
               onChange={handleChange}
-              className="search-input focus:outline-none focus:empty:"
+              className=" text-black w-full group-focus:outline-yellow-500  focus:outline-none pl-2"
               name="searchbox"
               type="text"
               value={searchInput}
               placeholder="Search Amazon.in"
             />
-            <div className="search-button-div cursor-pointer">
-              <img
-                src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665523/search_mtpynm.png"
-                alt="searchIcon"
-              />
+            <div className=" group w-[10%] flex justify-center items-center cursor-pointer ">
+              <HiMagnifyingGlass color=" black" size={25} />
             </div>
           </div>
+
           {searchInput ? (
             <>
               <div className=" w-full flex justify-center absolute mt-[26%]">

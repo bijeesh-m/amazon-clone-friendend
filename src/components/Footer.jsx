@@ -1,10 +1,16 @@
 import React from "react";
 
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <>
       <div className="footer-main-div">
-        <div className="footer-top">Back to top</div>
+        <div className="footer-top cursor-pointer" onClick={scrollToTop}>
+          Back to top
+        </div>
         <div className="footer-mid">
           <div className="mt-5">
             <div className="mb-2" id="heading">

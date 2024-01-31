@@ -34,6 +34,7 @@ import SalesReport from "./pages/admin/SalesReport";
 import OrderDetails from "./pages/admin/OrderDetails";
 import UserOrders from "./pages/user/UserOrders";
 import ViewOrders from "./pages/user/ViewOrders";
+import HomeCarousel from "./components/Carousel";
 
 export const myContext = createContext();
 
@@ -123,6 +124,7 @@ function App() {
             />
           </Route>
           <Route path="/adminlogin" element={<AdminLogin />} />
+          <Route path="/carousel" element={<HomeCarousel />} />
         </Routes>
       </div>
     </myContext.Provider>

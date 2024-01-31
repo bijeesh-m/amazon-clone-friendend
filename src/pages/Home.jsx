@@ -1,307 +1,162 @@
-import React from "react";
+import React, { useContext } from "react";
 import HomeCarousel from "../components/Carousel";
+import { myContext } from "../App";
 
 const Home = () => {
+  const { products } = useContext(myContext);
+
+  const mobiles = products
+    .filter((item) => item.subcategory === "Smartphones")
+    .slice(0, 4);
+  const fasion = products
+    .filter((item) => item.category === "Fashion")
+    .slice(0, 4);
+  const shoping = products
+    .filter((item) => item.subcategory === "Men's Clothing")
+    .slice(0, 4);
+  const kitchen = products
+    .filter((item) => item.category === "Kitchen Appliances")
+    .slice(0, 4);
+  const deals = products
+    .filter((item) => item.subcategory === "Laptop")
+    .slice(0, 5);
+  const electronics = products.filter(
+    (item) => item.category === "Electronics"
+  );
+
+  const like = electronics.sort(() => Math.random() - 0.5).slice(0, 6);
+
   return (
     <>
-      <HomeCarousel  className=" flex"/>
-      <div className="home-div">
-        {/* <div className="brodcast-div "> */}
-        <div className="sugession-div ">
-          <div className="sugession-div-text">
-            <h3 className=" m-3 text-[21px] font-bold ">Keep shoping</h3>
-            <div className="flex flex-wrap justify-evenly   items-center">
-              <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  h-[140px] ">
-                <img
-                  className=" w-[108px] "
-                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665520/keybord_vw13mv.jpg"
-                  alt="keyboard"
-                />
-                <p className="text-[13px]">
-                  Zebronics ZEB 3 <br />
-                  Keybord and Mouse
-                </p>
+      <div className=" bg-[#e3e6e6]">
+        <HomeCarousel />
+        <div className=" relative -top-[300px]  ">
+          <div className="brodcast-div ">
+            <div className="sugession-div ">
+              <div className="sugession-div-text">
+                <h3 className=" m-3 text-[21px] font-bold ">Keep shoping</h3>
+                <div className="grid grid-cols-2 gap-2 mx-2 justify-evenly   items-center">
+                  {shoping.map((item) => {
+                    return (
+                      <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  items-center  h-[25vh] ">
+                        <div className="  bg-yellow-200">
+                          <img
+                            className=" w-[75px] h-[95px]"
+                            src={item.image}
+                            alt="mobile"
+                          />
+                        </div>
+                        <p className="text-[13px]">{item.title}</p>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
-              <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  h-[140px] ">
-                <img
-                  className=" w-[108px] "
-                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665520/keybord_vw13mv.jpg"
-                  alt="keyboard"
-                />
-                <p className="text-[13px]">
-                  Zebronics ZEB 3 <br /> Keybord and Mouse
-                </p>
+              <div className="sugession-div-text">
+                <h3 className=" m-3 text-[21px] font-bold ">
+                  Kitchen appliances
+                </h3>
+                <div className="grid grid-cols-2 gap-2 mx-2 justify-evenly   items-center">
+                  {kitchen.map((item) => {
+                    return (
+                      <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  items-center  h-[25vh] ">
+                        <div className="  bg-yellow-200">
+                          <img
+                            className=" w-[75px] h-[95px]"
+                            src={item.image}
+                            alt="mobile"
+                          />
+                        </div>
+                        <p className="text-[13px]">{item.title}</p>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
-              <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  h-[140px] ">
-                <img
-                  className=" w-[108px] "
-                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665520/keybord_vw13mv.jpg"
-                  alt="keyboard"
-                />
-                <p className="text-[13px]">
-                  Zebronics ZEB 3 <br /> Keybord and Mouse
-                </p>
+              <div className="sugession-div-text">
+                <h3 className=" m-3 text-[21px] font-bold ">Smart Phones</h3>
+                <div className="grid grid-cols-2 gap-2 mx-2 justify-evenly   items-center">
+                  {mobiles.map((item) => {
+                    return (
+                      <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly items-center  h-[25vh] ">
+                        <img
+                          className=" w-[70px] "
+                          src={item.image}
+                          alt="mobile"
+                        />
+                        <p className="text-[13px]">{item.title}</p>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
-              <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  h-[140px] ">
-                <img
-                  className=" w-[108px] "
-                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665520/keybord_vw13mv.jpg"
-                  alt="keyboard"
-                />
-                <p className="text-[13px]">
-                  Zebronics ZEB 3 <br /> Keybord and Mouse
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="sugession-div-text">
-            <h3 className=" m-3 text-[21px] font-bold ">Kitchen appliances</h3>
-            <div className="flex flex-wrap justify-evenly   items-center">
-              <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  h-[140px] ">
-                <img
-                  className=" w-[108px] "
-                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665520/kitchen_bnrlug.webp"
-                  alt="Kitchen"
-                />
-                <p className="text-[13px]">Kitchen</p>
-              </div>
-              <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  h-[140px] ">
-                <img
-                  className=" w-[108px] "
-                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665520/kitchen_bnrlug.webp"
-                  alt="Kitchen"
-                />
-                <p className="text-[13px]">Kitchen</p>
-              </div>
-              <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  h-[140px] ">
-                <img
-                  className=" w-[108px] "
-                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665520/kitchen_bnrlug.webp"
-                  alt="Kitchen"
-                />
-                <p className="text-[13px]">Kitchen</p>
-              </div>
-              <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  h-[140px] ">
-                <img
-                  className=" w-[108px] "
-                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665520/kitchen_bnrlug.webp"
-                  alt="Kitchen"
-                />
-                <p className="text-[13px]">Kitchen</p>
+              <div className="sugession-div-text">
+                <h3 className=" m-3 text-[21px] font-bold ">Fasion</h3>
+                <div className="grid grid-cols-2 gap-2 mx-2 justify-evenly   items-center">
+                  {fasion.map((item) => {
+                    return (
+                      <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  items-center  h-[25vh] ">
+                        <div className="  bg-yellow-200">
+                          <img
+                            className=" w-[75px] h-[95px]"
+                            src={item.image}
+                            alt="mobile"
+                          />
+                        </div>
+                        <p className="text-[13px]">{item.title}</p>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>
-          <div className="sugession-div-text">
-            <h3 className=" m-3 text-[21px] font-bold ">Smart Phones</h3>
-            <div className="flex flex-wrap justify-evenly   items-center">
-              <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly items-center  h-[140px] ">
-                <img
-                  className=" w-[70px] "
-                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665520/mobile_xtzwho.webp"
-                  alt="keyboard"
-                />
-                <p className="text-[13px]">Samsung M34 5G</p>
-              </div>
-              <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly items-center  h-[140px] ">
-                <img
-                  className=" w-[70px] "
-                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665520/mobile_xtzwho.webp"
-                  alt="keyboard"
-                />
-                <p className="text-[13px]">Samsung M34 5G</p>
-              </div>
-              <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly items-center   h-[140px] ">
-                <img
-                  className=" w-[70px] "
-                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665520/mobile_xtzwho.webp"
-                  alt="keyboard"
-                />
-                <p className="text-[13px]">Samsung M34 5G</p>
-              </div>
-              <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly items-center  h-[140px] ">
-                <img
-                  className=" w-[70px] "
-                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665520/mobile_xtzwho.webp"
-                  alt="keyboard"
-                />
-                <p className="text-[13px]">Samsung M34 5G</p>
-              </div>
+          <div className="w-[95%] h-[380px]  bg-white m-8 p-3">
+            <div className="flex items-center">
+              <p className=" text-[21px] mx-3 font-bold">Today' Deals</p>
+              <p className=" text-[14px] mt-1 text-[#317185]">
+                See all details
+              </p>
+            </div>
+            <div className="flex w-full justify-evenly">
+              {deals.map((item) => {
+                return (
+                  <div className="w-[220px] h-[280px] rounded-md overflow-hidden shadow-lg">
+                    <img
+                      className="w-[240px] h-[200px]"
+                      src={item.image}
+                      alt="tDeals"
+                    />
+                    <p className="text-[18px] mt-1 m-0 text-center">
+                      Best Styles in Laptops
+                    </p>
+                    <p className="text-[15px] m-0 text-center text-red-600">
+                      Deal of the day
+                    </p>
+                  </div>
+                );
+              })}
             </div>
           </div>
-          <div className="sugession-div-text">
-            <h3 className=" m-3 text-[21px] font-bold ">Fasion</h3>
-            <div className="flex flex-wrap justify-evenly   items-center">
-              <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  h-[140px] ">
-                <img
-                  className=" w-[90px] h-[90px] "
-                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665514/fasion_qotyzn.jpg"
-                  alt="keyboard"
-                />
-                <p className="text-[13px]">Fasion</p>
-              </div>
-              <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  h-[140px] ">
-                <img
-                  className=" w-[90px] h-[90px] "
-                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665514/fasion_qotyzn.jpg"
-                  alt="keyboard"
-                />
-                <p className="text-[13px]">Fasion</p>
-              </div>
-              <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  h-[140px] ">
-                <img
-                  className=" w-[90px] h-[90px] "
-                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665514/fasion_qotyzn.jpg"
-                  alt="keyboard"
-                />
-                <p className="text-[13px]">Fasion</p>
-              </div>
-              <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  h-[140px] ">
-                <img
-                  className=" w-[90px] h-[90px] "
-                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665514/fasion_qotyzn.jpg"
-                  alt="keyboard"
-                />
-                <p className="text-[13px]">Fasion</p>
-              </div>
+          <div className="w-[95%]   bg-white m-8 p-3">
+            <div className="flex items-center">
+              <p className=" text-[21px] mx-3 font-bold">
+                Related to items you've viewed
+              </p>
+              <p className=" text-[14px] mt-1 text-[#317185]">See more</p>
             </div>
-          </div>
-        </div>
-        {/* </div> */}
-        <div className="w-[95%] h-[380px] mt-[200px] bg-white m-8 p-3">
-          <div className="flex items-center">
-            <p className=" text-[21px] mx-3 font-bold">Today' Deals</p>
-            <p className=" text-[14px] mt-1 text-[#317185]">See all details</p>
-          </div>
-          <div className="flex w-full justify-evenly">
-            <div>
-              <div className="w-[220px] h-[280px] rounded-md overflow-hidden shadow-lg">
-                <img
-                  className="w-[240px] h-[200px]"
-                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665523/todaysDeal_gfosif.jpg"
-                  alt="tDeals"
-                />
-                <p className="text-[18px] mt-1 m-0 text-center">
-                  Best Styles in Footwear
-                </p>
-                <p className="text-[15px] m-0 text-center text-red-600">
-                  Deal of the day
-                </p>
-              </div>
-            </div>
-            <div>
-              <div className="w-[220px] h-[280px] rounded-md overflow-hidden shadow-lg">
-                <img
-                  className="w-[240px] h-[200px]"
-                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665523/todaysDeal_gfosif.jpg"
-                  alt="tDeals"
-                />
-                <p className="text-[18px] mt-1 m-0 text-center">
-                  Best Styles in Footwear
-                </p>
-                <p className="text-[15px] m-0 text-center text-red-600">
-                  Deal of the day
-                </p>
-              </div>
-            </div>
-            <div>
-              <div className="w-[220px] h-[280px] rounded-md overflow-hidden shadow-lg">
-                <img
-                  className="w-[240px] h-[200px]"
-                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665523/todaysDeal_gfosif.jpg"
-                  alt="tDeals"
-                />
-                <p className="text-[18px] mt-1 m-0 text-center">
-                  Best Styles in Footwear
-                </p>
-                <p className="text-[15px] m-0 text-center text-red-600">
-                  Deal of the day
-                </p>
-              </div>
-            </div>
-            <div>
-              <div className="w-[220px] h-[280px] rounded-md overflow-hidden shadow-lg">
-                <img
-                  className="w-[240px] h-[200px]"
-                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665523/todaysDeal_gfosif.jpg"
-                  alt="tDeals"
-                />
-                <p className="text-[18px] mt-1 m-0 text-center">
-                  Best Styles in Footwear
-                </p>
-                <p className="text-[15px] m-0 text-center text-red-600">
-                  Deal of the day
-                </p>
-              </div>
-            </div>
-            <div>
-              <div className="w-[220px] h-[280px] rounded-md overflow-hidden shadow-lg">
-                <img
-                  className="w-[240px] h-[200px]"
-                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665523/todaysDeal_gfosif.jpg"
-                  alt="tDeals"
-                />
-                <p className="text-[18px] mt-1 m-0 text-center">
-                  Best Styles in Footwear
-                </p>
-                <p className="text-[15px] m-0 text-center text-red-600">
-                  Deal of the day
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="w-[95%] h-[300px]  bg-white m-8 p-3">
-          <div className="flex items-center">
-            <p className=" text-[21px] mx-3 font-bold">
-              Related to items you've viewed
-            </p>
-            <p className=" text-[14px] mt-1 text-[#317185]">See more</p>
-          </div>
-          <div className="flex p-5 w-full justify-evenly">
-            <div>
-              <div className="w-[220px] h-[280px] rounded-md overflow-hidden ">
-                <img
-                  className="w-[200px] h-[150px]"
-                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665506/2_nnq4j7.jpg"
-                  alt="tDeals"
-                />
-              </div>
-            </div>
-            <div>
-              <div className="w-[220px] h-[280px] rounded-md overflow-hidden ">
-                <img
-                  className="w-[200px] h-[150px]"
-                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665506/3_nahlzf.jpg"
-                  alt="tDeals"
-                />
-              </div>
-            </div>
-            <div>
-              <div className="w-[220px] h-[280px] rounded-md overflow-hidden ">
-                <img
-                  className="w-[200px] h-[150px]"
-                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665507/4_lzi6ql.jpg"
-                  alt="tDeals"
-                />
-              </div>
-            </div>
-            <div>
-              <div className="w-[220px] h-[280px] rounded-md overflow-hidden ">
-                <img
-                  className="w-[200px] h-[150px]"
-                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665507/5_iowtvx.jpg"
-                  alt="tDeals"
-                />
-              </div>
-            </div>
-            <div>
-              <div className="w-[220px] h-[280px] rounded-md overflow-hidden ">
-                <img
-                  className="w-[200px] h-[150px]"
-                  src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665507/6_agillq.jpg"
-                  alt="tDeals"
-                />
-              </div>
+            <div className="flex p-5 w-full justify-evenly">
+              {like.map((item) => {
+                return (
+                  <div className="w-[220px]  rounded-md overflow-hidden ">
+                    <img
+                      className="w-[100px] h-[20vh] "
+                      src={item.image}
+                      alt="tDeals"
+                    />
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
