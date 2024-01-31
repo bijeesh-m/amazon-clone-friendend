@@ -33,7 +33,7 @@ const Home = () => {
         <div className=" relative -top-[300px]  ">
           <div className="brodcast-div ">
             <div className="sugession-div ">
-              <div className="sugession-div-text">
+              <div className="">
                 <h3 className=" m-3 text-[21px] font-bold ">Keep shoping</h3>
                 <div className="grid grid-cols-2 gap-2 mx-2 justify-evenly   items-center">
                   {shoping.map((item) => {
@@ -52,7 +52,7 @@ const Home = () => {
                   })}
                 </div>
               </div>
-              <div className="sugession-div-text">
+              <div className="">
                 <h3 className=" m-3 text-[21px] font-bold ">
                   Kitchen appliances
                 </h3>
@@ -73,7 +73,7 @@ const Home = () => {
                   })}
                 </div>
               </div>
-              <div className="sugession-div-text">
+              <div className="">
                 <h3 className=" m-3 text-[21px] font-bold ">Smart Phones</h3>
                 <div className="grid grid-cols-2 gap-2 mx-2 justify-evenly   items-center">
                   {mobiles.map((item) => {
@@ -90,7 +90,7 @@ const Home = () => {
                   })}
                 </div>
               </div>
-              <div className="sugession-div-text">
+              <div className="">
                 <h3 className=" m-3 text-[21px] font-bold ">Fasion</h3>
                 <div className="grid grid-cols-2 gap-2 mx-2 justify-evenly   items-center">
                   {fasion.map((item) => {
