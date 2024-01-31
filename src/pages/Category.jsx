@@ -10,16 +10,16 @@ const Category = () => {
   const [subCategory, setSubCategory] = useState("");
   const { category } = useParams();
 
-
   useEffect(() => {
+    const toastId = toast.loading("Loading...");
     setSubCategory("");
     axios
       .get(`https://amazon-clone-votv.onrender.com/user/products/${category}`)
       .then((res) => {
         setProducts(res.data);
+        toast.remove(toastId);
       })
-      .catch((err) => {
-      });
+      .catch((err) => {});
   }, [category]);
 
   const filteredProducts = subCategory
@@ -27,26 +27,35 @@ const Category = () => {
     : products;
 
   const handleAddToCart = (prodId) => {
+    const toastId = toast.loading("Loading...");
     axios
-      .post(`https://amazon-clone-votv.onrender.com/user/addtocart/${prodId}`, user, {
-        withCredentials: true,
-      })
+      .post(
+        `https://amazon-clone-votv.onrender.com/user/addtocart/${prodId}`,
+        user,
+        {
+          withCredentials: true,
+        }
+      )
       .then((res) => {
         setCartCount(cartCount + 1);
-        toast.success("Item added to cart");
+        toast.success("Item added to cart", { id: toastId });
       })
       .catch((err) => {
         if (err.response.data === "Unauthorized") {
-          toast.error("Please login to continue");
+          toast.error("Please login to continue", { id: toastId });
         } else {
-          toast.error("Item already in a cart");
-          
+          toast.error("Item already in a cart", { id: toastId });
         }
       });
   };
 
   return (
     <div className="  flex flex-col items-center">
+      {!products && (
+        <div class="spinner-grow" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      )}
       <div className="w-full flex h-[49px] justify-between items-center border shadow-sm">
         <ul className="flex items-center h-full ml-2 space-x-4 w-[70%] ">
           <h1 className=" font-bold">{category}</h1>
