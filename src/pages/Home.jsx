@@ -31,10 +31,10 @@ const Home = () => {
       <div className=" bg-[#e3e6e6]">
         <HomeCarousel />
         <div className=" relative -top-[300px]  ">
-          <div className="brodcast-div ">
-            <div className="sugession-div ">
-              <div className="">
-                <h3 className=" m-3 text-[21px] font-bold ">Keep shoping</h3>
+          <div className="brodcast-div flex justify-center w-full">
+            <div className="  flex  w-[98%]  justify-evenly">
+              <div className=" w-1/5 bg-white">
+                <h3 className=" my-3 ml-2 text-[21px]  text-start font-bold ">Keep shoping</h3>
                 <div className="grid grid-cols-2 gap-2 mx-2 justify-evenly   items-center">
                   {shoping.map((item) => {
                     return (
@@ -52,8 +52,8 @@ const Home = () => {
                   })}
                 </div>
               </div>
-              <div className="">
-                <h3 className=" m-3 text-[21px] font-bold ">
+              <div className=" w-1/4 bg-white">
+                <h3 className=" my-3 ml-2  text-[21px] font-bold ">
                   Kitchen appliances
                 </h3>
                 <div className="grid grid-cols-2 gap-2 mx-2 justify-evenly   items-center">
@@ -73,8 +73,8 @@ const Home = () => {
                   })}
                 </div>
               </div>
-              <div className="">
-                <h3 className=" m-3 text-[21px] font-bold ">Smart Phones</h3>
+              <div className=" w-1/4 bg-white">
+                <h3 className=" my-3 ml-2  text-[21px] font-bold ">Smart Phones</h3>
                 <div className="grid grid-cols-2 gap-2 mx-2 justify-evenly   items-center">
                   {mobiles.map((item) => {
                     return (
@@ -90,8 +90,8 @@ const Home = () => {
                   })}
                 </div>
               </div>
-              <div className="">
-                <h3 className=" m-3 text-[21px] font-bold ">Fasion</h3>
+              <div className=" w-1/4 bg-white">
+                <h3 className=" my-3 ml-2  text-[21px] font-bold ">Fasion</h3>
                 <div className="grid grid-cols-2 gap-2 mx-2 justify-evenly   items-center">
                   {fasion.map((item) => {
                     return (
@@ -112,25 +112,25 @@ const Home = () => {
             </div>
           </div>
           <div className="w-[95%] h-[380px]  bg-white m-8 p-3">
-            <div className="flex items-center">
-              <p className=" text-[21px] mx-3 font-bold">Today' Deals</p>
-              <p className=" text-[14px] mt-1 text-[#317185]">
+            <div className="flex items-center mb-1">
+              <p className=" text-xl mx-3 font-bold">Today' Deals</p>
+              <p className=" text-s mt-1 text-[#317185]">
                 See all details
               </p>
             </div>
-            <div className="flex w-full justify-evenly">
+            <div className="flex w-full  gap-2">
               {deals.map((item) => {
                 return (
-                  <div className="w-[220px] h-[280px] rounded-md overflow-hidden shadow-lg">
+                  <div className="w-1/5  h-full rounded-md overflow-hidden shadow-lg">
                     <img
-                      className="w-[240px] h-[200px]"
+                      className="w-full h-[40vh]"
                       src={item.image}
                       alt="tDeals"
                     />
-                    <p className="text-[18px] mt-1 m-0 text-center">
+                    <p className="text-l  text-center">
                       Best Styles in Laptops
                     </p>
-                    <p className="text-[15px] m-0 text-center text-red-600">
+                    <p className="text-sm mb-2 text-center text-red-600">
                       Deal of the day
                     </p>
                   </div>
@@ -140,17 +140,17 @@ const Home = () => {
           </div>
           <div className="w-[95%]   bg-white m-8 p-3">
             <div className="flex items-center">
-              <p className=" text-[21px] mx-3 font-bold">
+              <p className=" text-xl mx-3 font-bold">
                 Related to items you've viewed
               </p>
-              <p className=" text-[14px] mt-1 text-[#317185]">See more</p>
+              <p className=" text-s mt-1 text-[#317185]">See more</p>
             </div>
             <div className="flex p-5 w-full justify-evenly">
               {like.map((item) => {
                 return (
-                  <div className="w-[220px]  rounded-md overflow-hidden ">
+                  <div className="w-1/6  rounded-md overflow-hidden ">
                     <img
-                      className="w-[100px] h-[20vh] "
+                      className=" h-[30vh] "
                       src={item.image}
                       alt="tDeals"
                     />

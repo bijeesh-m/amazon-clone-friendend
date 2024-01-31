@@ -43,7 +43,7 @@ const HomeCarousel = () => {
   }, [index]);
 
   return (
-    <div className=" bg-center  h-[100vh]  w-[full] m-auto   relative ">
+    <div className=" bg-center  h-[100vh]  w-[full]    relative ">
       <div
         style={{
           backgroundImage: `url(${slides[index].url}`,
