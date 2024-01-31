@@ -33,7 +33,7 @@ const Home = () => {
         <div className=" relative -top-[300px]  ">
           <div className="brodcast-div flex justify-center w-full">
             <div className="  flex  w-[95%]  justify-between">
-              <div className="  w-[23%] bg-white">
+              <div className="  w-[24%] bg-white">
                 <h3 className=" my-3 ml-2 text-[21px]  text-start font-bold ">
                   Keep shoping
                 </h3>
@@ -54,7 +54,7 @@ const Home = () => {
                   })}
                 </div>
               </div>
-              <div className=" w-[23%] bg-white">
+              <div className=" w-[24%] bg-white">
                 <h3 className=" my-3 ml-2  text-[21px] font-bold ">
                   Kitchen appliances
                 </h3>
@@ -75,7 +75,7 @@ const Home = () => {
                   })}
                 </div>
               </div>
-              <div className=" w-[23%] bg-white">
+              <div className=" w-[24%] bg-white">
                 <h3 className=" my-3 ml-2  text-[21px] font-bold ">
                   Smart Phones
                 </h3>
@@ -94,7 +94,7 @@ const Home = () => {
                   })}
                 </div>
               </div>
-              <div className=" w-[23%] bg-white">
+              <div className=" w-[24%] bg-white">
                 <h3 className=" my-3 ml-2  text-[21px] font-bold ">Fasion</h3>
                 <div className="grid grid-cols-2 gap-2 mx-2 justify-evenly   items-center">
                   {fasion.map((item) => {
