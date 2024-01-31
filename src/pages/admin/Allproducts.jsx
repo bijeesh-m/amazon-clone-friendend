@@ -9,7 +9,7 @@ const Allproducts = () => {
 
   useEffect(() => {
     axios
-      .get("https://amazon-clone-votv.onrender.com/products")
+      .get("https://amazon-clone-votv.onrender.com/admin/products")
       .then((res) => {
         setProducts(res.data);
       })
