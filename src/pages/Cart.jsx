@@ -14,7 +14,7 @@ const Cart = () => {
   const { cartCount, setCartCount, user } = useContext(myContext);
 
   const handleQuantityChange = (e, prodId) => {
-
+    const toastId = toast.loading("Loading...");
     const newQuantity = e.target.value;
     if (token) {
       const user = jwtDecode(token);
@@ -27,6 +27,7 @@ const Cart = () => {
           }
         )
         .then((res) => {
+          toast.remove(toastId);
           setCart(res.data);
         })
         .catch((err) => console.log(err));
@@ -34,7 +35,6 @@ const Cart = () => {
   };
 
   useEffect(() => {
-    const toastId = toast.loading("Loading...");
     if (token) {
       const user = jwtDecode(token);
       axios
@@ -43,7 +43,6 @@ const Cart = () => {
           if (!isEqual(cart, res.data.cart)) {
             setCart(res.data.cart);
           }
-          toast.remove(toastId);
           setCoupen(res.data.coupen);
           const total = res.data.cart.reduce(
             (total, item) => total + item.price * item.qty,
@@ -55,6 +54,8 @@ const Cart = () => {
   }, [token, cart, cartCount]);
 
   const handleDelete = (prodId) => {
+    const toastId = toast.loading("Loading...");
+
     if (token) {
       const user = jwtDecode(token);
       axios
@@ -65,6 +66,7 @@ const Cart = () => {
           }
         )
         .then((res) => {
+          toast.remove(toastId);
           setCartCount(cartCount + 1);
         })
         .catch((err) => console.log(err));
