@@ -7,7 +7,6 @@ const ViewOrders = () => {
   const [order, setOrder] = useState({});
   const [products, setProducts] = useState([]);
   const [address, setAddress] = useState({});
-  const [width, setWidth] = useState(0);
 
   useEffect(() => {
     axios

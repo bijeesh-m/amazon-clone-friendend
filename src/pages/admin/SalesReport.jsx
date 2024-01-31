@@ -100,38 +100,43 @@ const SalesReport = () => {
     },
   };
   return (
-    <div className=" w-full flex justify-center h-full items-center">
-      <Card className="w-[50%] max-sm:h-1/2 max-sm:w-3/4">
-        <CardHeader
-          floated={false}
-          shadow={false}
-          color="transparent"
-          className="flex flex-col gap-4 rounded-none md:flex-row md:items-center"
-        >
-          <div className=" rounded-lg bg-white text-white">
-            <img
-              width={50}
-              src="https://res.cloudinary.com/dunf6rko6/image/upload/v1705728747/seo-report_7289700_sipjfo.png"
-              alt=""
-            />
-          </div>
-          <div>
-            <Typography variant="h6" color="blue-gray">
-              Sales Report
-            </Typography>
-            <Typography
-              variant="small"
-              color="gray"
-              className="max-w-sm font-normal"
-            >
-              Total sales/month
-            </Typography>
-          </div>
-        </CardHeader>
-        <CardBody className="px-2 pb-0">
-          <Chart {...chartConfig} />
-        </CardBody>
-      </Card>
+    <div className="">
+      <div className=" w-full bg-yellow-100 h-[10%] flex justify-center items-center ">
+        <p className=" font-bold">Total Sales : ₹ {totalSale.total}</p>
+      </div>
+      <div className=" w-full flex justify-center h-full items-center mt-[3%] ">
+        <Card className="w-[50%] max-sm:h-1/2 max-sm:w-3/4">
+          <CardHeader
+            floated={false}
+            shadow={false}
+            color="transparent"
+            className="flex  flex-col gap-4 rounded-none md:flex-row md:items-center"
+          >
+            <div className=" rounded-lg bg-white text-white">
+              <img
+                width={50}
+                src="https://res.cloudinary.com/dunf6rko6/image/upload/v1705728747/seo-report_7289700_sipjfo.png"
+                alt=""
+              />
+            </div>
+            <div>
+              <Typography variant="h6" color="blue-gray">
+                Sales Report
+              </Typography>
+              <Typography
+                variant="small"
+                color="gray"
+                className="max-w-sm font-normal"
+              >
+                Total sales/month
+              </Typography>
+            </div>
+          </CardHeader>
+          <CardBody className="px-2 pb-0">
+            <Chart {...chartConfig} />
+          </CardBody>
+        </Card>
+      </div>
     </div>
   );
 };

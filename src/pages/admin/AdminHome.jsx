@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useClickAway } from "react-use";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import axios from "axios";
 import toast from "react-hot-toast";
@@ -6,6 +7,8 @@ const AdminHome = () => {
   const [showSidebar, setShowSidebar] = useState(false);
   const [admin, setAdmin] = useState(false);
   const navigate = useNavigate();
+  const componentRef = React.useRef(null);
+
   const toggleSidebar = () => {
     setShowSidebar(!showSidebar);
   };
@@ -30,7 +33,6 @@ const AdminHome = () => {
         withCredentials: true,
       })
       .then((res) => {
-        
         toast.success("Logout success");
         navigate("/adminlogin");
       })
@@ -38,16 +40,34 @@ const AdminHome = () => {
         console.log(err);
       });
   };
+
+  useClickAway(componentRef, () => {
+    setShowSidebar(false);
+  });
+
   return (
     <div>
       <div className="flex h-screen bg-gray-100  ">
         <div
-          className={`flex-col w-64 bg-gray-800 h-full ${
+          ref={componentRef}
+          className={`flex-col w-64 bg-gray-800 h-full absolute ${
             !showSidebar && "hidden"
           }`}
         >
-          <div className="flex items-center justify-center h-16 bg-gray-900">
-            <span className="text-white font-bold uppercase">Sidebar</span>
+          <div className="flex items-center justify-evenly h-16 bg-gray-900">
+            <button
+              onClick={toggleSidebar}
+              className="text-gray-500  mx-2  w-1/7 focus:outline-none focus:text-gray-700"
+            >
+              <img
+                width={30}
+                src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665520/menu_lj46zj.png"
+                alt=""
+              />
+            </button>
+            <span className="text-white mx-2 w-1/2 font-bold uppercase">
+              Sidebar
+            </span>
           </div>
           <div className="flex flex-col  justify-between h-[89vh]  overflow-y-auto ">
             <nav className="flex-1   px-2 py-4 bg-gray-800">
