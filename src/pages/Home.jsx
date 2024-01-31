@@ -32,9 +32,11 @@ const Home = () => {
         <HomeCarousel />
         <div className=" relative -top-[300px]  ">
           <div className="brodcast-div flex justify-center w-full">
-            <div className="  flex  w-[95%]  justify-evenly">
+            <div className="  flex  w-[95%]  justify-between">
               <div className="  w-[23%] bg-white">
-                <h3 className=" my-3 ml-2 text-[21px]  text-start font-bold ">Keep shoping</h3>
+                <h3 className=" my-3 ml-2 text-[21px]  text-start font-bold ">
+                  Keep shoping
+                </h3>
                 <div className="grid grid-cols-2 gap-2 mx-2 justify-evenly   items-center">
                   {shoping.map((item) => {
                     return (
@@ -74,7 +76,9 @@ const Home = () => {
                 </div>
               </div>
               <div className=" w-[23%] bg-white">
-                <h3 className=" my-3 ml-2  text-[21px] font-bold ">Smart Phones</h3>
+                <h3 className=" my-3 ml-2  text-[21px] font-bold ">
+                  Smart Phones
+                </h3>
                 <div className="grid grid-cols-2 gap-2 mx-2 justify-evenly   items-center">
                   {mobiles.map((item) => {
                     return (
@@ -114,9 +118,7 @@ const Home = () => {
           <div className="w-[95%] h-[380px]  bg-white m-8 p-3">
             <div className="flex items-center mb-1">
               <p className=" text-xl mx-3 font-bold">Today' Deals</p>
-              <p className=" text-s mt-1 text-[#317185]">
-                See all details
-              </p>
+              <p className=" text-s mt-1 text-[#317185]">See all details</p>
             </div>
             <div className="flex w-full  gap-2">
               {deals.map((item) => {
@@ -149,11 +151,7 @@ const Home = () => {
               {like.map((item) => {
                 return (
                   <div className="w-1/6  rounded-md overflow-hidden ">
-                    <img
-                      className=" h-[30vh] "
-                      src={item.image}
-                      alt="tDeals"
-                    />
+                    <img className=" h-[30vh] " src={item.image} alt="tDeals" />
                   </div>
                 );
               })}
