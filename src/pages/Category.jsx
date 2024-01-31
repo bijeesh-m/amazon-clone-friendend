@@ -51,11 +51,10 @@ const Category = () => {
 
   return (
     <div className="  flex flex-col items-center">
-      {!products && (
-        <div class="spinner-grow" role="status">
-          <span class="visually-hidden">Loading...</span>
-        </div>
-      )}
+      <div class="spinner-grow" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+
       <div className="w-full flex h-[49px] justify-between items-center border shadow-sm">
         <ul className="flex items-center h-full ml-2 space-x-4 w-[70%] ">
           <h1 className=" font-bold">{category}</h1>
