@@ -40,6 +40,7 @@ const Category = () => {
           toast.error("Please login to continue");
         } else {
           toast.error("Item already in a cart");
+          
         }
       });
   };
