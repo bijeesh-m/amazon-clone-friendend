@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const UserOrders = () => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
+    const toastId = toast.loading("Loading...");
     axios
       .get(`https://amazon-clone-votv.onrender.com/user/orders`, { withCredentials: true })
       .then((res) => {
         setOrders(res.data);
+        toast.remove(toastId)
       })
       .catch((err) => {
         console.log(err);

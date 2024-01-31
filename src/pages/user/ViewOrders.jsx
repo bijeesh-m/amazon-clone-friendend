@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const ViewOrders = () => {
   const { id } = useParams();
@@ -9,12 +10,14 @@ const ViewOrders = () => {
   const [address, setAddress] = useState({});
 
   useEffect(() => {
+    const toastId = toast.loading("Loading...");
     axios
       .get(`https://amazon-clone-votv.onrender.com/user/vieworder/${id}`)
       .then((res) => {
         setOrder(res.data);
         setProducts(res.data.products);
         setAddress(res.data.user.address);
+        toast.remove(toastId);
       })
       .catch((err) => {
         console.log(err);
@@ -92,7 +95,9 @@ const ViewOrders = () => {
         ? "w-[33.33%]"
         : order.status === "Shipped"
         ? "w-[66.66%]"
-        : order.status === "Delivered" ? "w-[100%]":"w-0"
+        : order.status === "Delivered"
+        ? "w-[100%]"
+        : "w-0"
     }`}
             ></div>
             <div className="bg-white border w-7 h-7 rounded-full flex justify-center items-center -translate-x-[0.5px]">

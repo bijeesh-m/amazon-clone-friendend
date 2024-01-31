@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import { myContext } from "../App";
 import { isEqual } from "lodash";
+import toast from "react-hot-toast";
 
 const Cart = () => {
   const [cart, setCart] = useState([]);
@@ -13,6 +14,8 @@ const Cart = () => {
   const { cartCount, setCartCount, user } = useContext(myContext);
 
   const handleQuantityChange = (e, prodId) => {
+    const toastId = toast.loading("Loading...");
+
     const newQuantity = e.target.value;
     if (token) {
       const user = jwtDecode(token);
@@ -26,12 +29,14 @@ const Cart = () => {
         )
         .then((res) => {
           setCart(res.data);
+          toast.remove(toastId);
         })
         .catch((err) => console.log(err));
     }
   };
 
   useEffect(() => {
+    const toastId = toast.loading("Loading...");
     if (token) {
       const user = jwtDecode(token);
       axios
@@ -40,6 +45,7 @@ const Cart = () => {
           if (!isEqual(cart, res.data.cart)) {
             setCart(res.data.cart);
           }
+          toast.remove(toastId);
           setCoupen(res.data.coupen);
           const total = res.data.cart.reduce(
             (total, item) => total + item.price * item.qty,
