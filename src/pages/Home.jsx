@@ -32,7 +32,7 @@ const Home = () => {
         <HomeCarousel />
         <div className=" relative -top-[300px]  ">
           <div className="brodcast-div flex justify-center w-full">
-            <div className="  flex  w-[98%]  justify-evenly">
+            <div className="  flex  w-[95%]  justify-evenly">
               <div className=" w-1/4 bg-white">
                 <h3 className=" my-3 ml-2 text-[21px]  text-start font-bold ">Keep shoping</h3>
                 <div className="grid grid-cols-2 gap-2 mx-2 justify-evenly   items-center">
