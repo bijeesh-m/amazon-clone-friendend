@@ -97,7 +97,7 @@ const Header = () => {
 
           {searchInput ? (
             <>
-              <div className=" w-full flex justify-center absolute mt-[26%]">
+              <div className=" w-full flex justify-center absolute z-1 mt-[26%]">
                 <div className=" h-[50vh] w-[41%] bg-white text-[black] overflow-hidden border ">
                   {products
                     .filter((item) => {
