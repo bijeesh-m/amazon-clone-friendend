@@ -13,19 +13,19 @@ const AdminHome = () => {
     setShowSidebar(!showSidebar);
   };
 
-  useEffect(() => {
-    axios
-      .get("https://amazon-clone-votv.onrender.com/admin/getadmin", {
-        withCredentials: true,
-      })
-      .then((res) => {
-        console.log(res);
-        setAdmin(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get("https://amazon-clone-votv.onrender.com/admin/getadmin", {
+  //       withCredentials: true,
+  //     })
+  //     .then((res) => {
+  //       console.log(res);
+  //       setAdmin(res.data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, []);
 
   const handleLogOut = () => {
     axios
