@@ -44,7 +44,7 @@ const UserOrders = () => {
                 </div>
               </div>
               <div className=" flex flex-col  w-[60%]   items-end mr-5 my-3">
-                <div className=" text-[12px]">ORDER # {order._id}</div>
+                <div className=" text-[12px]">ORDER # {order.orderId}</div>
                 <Link to={`/vieworder/${order.orderId}`}>
                   <p className=" text-[14px] text-[#198197]">
                     View order details

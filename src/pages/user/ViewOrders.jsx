@@ -28,7 +28,7 @@ const ViewOrders = () => {
     <div className=" flex justify-center p-10">
       <div className=" bg-[#f9fafb] w-[90%]  flex flex-col rounded-lg items-center justify-center pt-4 space-y-7">
         <div className=" flex w-[90%] py-2 justify-between">
-          <p className=" text-[20px] font-semibold">Order #{order._id}</p>
+          <p className=" text-[20px] font-semibold">Order #{order.orderId}</p>
           <p className="">Order placed {order.createdAt}</p>
         </div>
         <div className=" w-[90%] bg-white flex   p-4 rounded-lg ">
