@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const OrderDetails = () => {
   const [order, setOrder] = useState({});
@@ -37,7 +37,7 @@ const OrderDetails = () => {
     <div className="  flex justify-center items-center ">
       <div className=" w-[90%]    p-3 mt-2">
         <div className=" w-full text-[24px]  font-bold flex flex-col justify-center ">
-          <p>Order #{order._id}</p>
+          <p>Order #{order.orderId}</p>
         </div>
         <div className="  w-full h-full bg- rounded-lg  text-[14px] space-x-2 flex mt-6 ">
           <div className=" w-3/4   bg-white rounded-lg min-h-[60vh] ">
