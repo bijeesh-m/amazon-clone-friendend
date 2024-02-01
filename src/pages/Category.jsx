@@ -8,16 +8,17 @@ const Category = () => {
   const [products, setProducts] = useState([]);
   const { user, cartCount, setCartCount } = useContext(myContext);
   const [subCategory, setSubCategory] = useState("");
+  const [loading, setLoading] = useState(false);
   const { category } = useParams();
 
   useEffect(() => {
-    const toastId = toast.loading("Loading...");
+    setLoading(true);
     setSubCategory("");
     axios
       .get(`https://amazon-clone-votv.onrender.com/user/products/${category}`)
       .then((res) => {
         setProducts(res.data);
-        toast.remove(toastId);
+        setLoading(false);
       })
       .catch((err) => {});
   }, [category]);
@@ -51,9 +52,14 @@ const Category = () => {
 
   return (
     <div className="  flex flex-col items-center">
-      <div class="spinner-grow" role="status">
-        <span class="visually-hidden">Loading...</span>
-      </div>
+      {loading && (
+        <div
+          class="spinner-grow w-[100%] h-full flex justify-center items-center"
+          role="status"
+        >
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      )}
 
       <div className="w-full flex h-[49px] justify-between items-center border shadow-sm">
         <ul className="flex items-center h-full ml-2 space-x-4 w-[70%] ">
