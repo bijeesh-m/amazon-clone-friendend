@@ -33,11 +33,10 @@ const Login = () => {
           setUser(res.data.user);
           toast.success("Login Success", { id: toastId });
           navigate("/");
-          lo;
         }
       })
       .catch((err) => {
-        toast.error(err.response.data);
+        toast.error(err.response.data, { id: toastId });
       });
   };
 
