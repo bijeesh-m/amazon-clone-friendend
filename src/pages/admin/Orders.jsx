@@ -40,13 +40,13 @@ const Orders = () => {
         </div>
         {orders.map((order) => {
           return (
-            <Link to={`/adminHome/orderdetails/${order._id}`}>
+            <Link to={`/adminHome/orderdetails/${order.orderId}`}>
               <div
                 key={order._id}
                 className=" w-full h-16 text-[#738292] text-[14px] hover:bg-[#f2f3f5] flex justify-between p-4 items-center"
               >
                 <div className=" w-1/4 bg ">
-                  <p>{order._id}</p>
+                  <p>{order.orderId}</p>
                 </div>
                 <div className=" w-1/4 bg ">
                   <p>{order.createdAt}</p>
