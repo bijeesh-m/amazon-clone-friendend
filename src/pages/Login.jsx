@@ -19,20 +19,21 @@ const Login = () => {
   };
 
   const handleSubmit = (e) => {
+    const toastId = toast.loading("Loading...");
     e.preventDefault();
     axios
       .post("https://amazon-clone-votv.onrender.com/user/login", inputValues, {
         withCredentials: true,
       })
       .then((res) => {
-
         if (res.data.data === "success") {
           localStorage.setItem("user", res.data.token);
           const userInfo = JSON.stringify(res.data.user);
           localStorage.setItem("userInfo", userInfo);
           setUser(res.data.user);
-          toast.success("Login Success");
+          toast.success("Login Success", { id: toastId });
           navigate("/");
+          lo;
         }
       })
       .catch((err) => {
