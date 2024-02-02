@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 
 const UserOrders = () => {
   const [orders, setOrders] = useState([]);
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     const toastId = toast.loading("Loading...");
