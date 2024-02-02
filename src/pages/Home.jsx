@@ -27,7 +27,8 @@ const Home = () => {
   const electronics =
     products && products.filter((item) => item.category === "Electronics");
 
-  const like = electronics.sort(() => Math.random() - 0.5).slice(0, 6);
+  const like =
+    electronics && electronics.sort(() => Math.random() - 0.5).slice(0, 6);
 
   return (
     <>
