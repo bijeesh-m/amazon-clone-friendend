@@ -50,8 +50,8 @@ function App() {
         withCredentials: true,
       })
       .then((res) => {
-        if (!isEqual(products, res.data.products)) {
-          setProducts(res.data.products);
+        if (!isEqual(products, res.data)) {
+          setProducts(res.data);
         }
       })
       .catch((err) => {
