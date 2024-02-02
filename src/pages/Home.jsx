@@ -4,7 +4,7 @@ import { myContext } from "../App";
 
 const Home = () => {
   const { products } = useContext(myContext);
-
+  console.log(products);
   const mobiles =
     products &&
     products.filter((item) => item.subcategory === "Smartphones").slice(0, 4);
