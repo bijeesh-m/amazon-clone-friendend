@@ -22,7 +22,7 @@ const UserOrders = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [page]);
 
   const prevPage = () => {
     setPage((prev) => prev + 1);
