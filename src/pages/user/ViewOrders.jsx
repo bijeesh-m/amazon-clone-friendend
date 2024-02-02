@@ -12,7 +12,7 @@ const ViewOrders = () => {
   useEffect(() => {
     const toastId = toast.loading("Loading...");
     axios
-      .get(`https://amazon-clone-votv.onrender.com/user/vieworder/${id}`)
+      .get(`http://localhost:3002/user/vieworder/${id}`)
       .then((res) => {
         setOrder(res.data);
         setProducts(res.data.products);

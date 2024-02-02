@@ -5,24 +5,44 @@ import toast from "react-hot-toast";
 
 const UserOrders = () => {
   const [orders, setOrders] = useState([]);
+  const [page, setPage] = useState(0);
 
   useEffect(() => {
     const toastId = toast.loading("Loading...");
     axios
-      .get(`https://amazon-clone-votv.onrender.com/user/orders`, { withCredentials: true })
+      .get(`https://amazon-clone-votv.onrender.com/user/orders?page=${page}`, { withCredentials: true })
+      // .get(`http://localhost:3002/user/orders?page=${page}`, {
+      //   withCredentials: true,
+      // })
       .then((res) => {
+        console.log(res);
         setOrders(res.data);
-        toast.remove(toastId)
+        toast.remove(toastId);
       })
       .catch((err) => {
         console.log(err);
       });
   }, []);
 
+  const prevPage = () => {
+    setPage((prev) => prev + 1);
+  };
+  const nextPage = () => {
+    setPage((prev) => prev - 1);
+  };
+
   return (
     <div className="w-full min-h-[100vh]  flex items-center flex-col p-4 ">
       <div className="     h-10 w-[70%] flex items-center top-23 ">
         <h1 className=" text-[26px] font-semibold ">Your Orders</h1>
+      </div>
+      <div className=" flex justify-between w-[70%] h-7 bg-gray-200">
+        <button onClick={prevPage}>
+          <p>{"<<"}Prev</p>
+        </button>
+        <button onClick={nextPage}>
+          <p>Next{">>"}</p>
+        </button>
       </div>
       {orders.map((order) => {
         return (
