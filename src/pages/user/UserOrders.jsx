@@ -10,7 +10,9 @@ const UserOrders = () => {
   useEffect(() => {
     const toastId = toast.loading("Loading...");
     axios
-      .get(`https://amazon-clone-votv.onrender.com/user/orders?page=${page}`, { withCredentials: true })
+      .get(`https://amazon-clone-votv.onrender.com/user/orders?page=${page}`, {
+        withCredentials: true,
+      })
       // .get(`http://localhost:3002/user/orders?page=${page}`, {
       //   withCredentials: true,
       // })
@@ -25,10 +27,10 @@ const UserOrders = () => {
   }, [page]);
 
   const prevPage = () => {
-    setPage((prev) => prev + 1);
+    setPage((prev) => prev - 1);
   };
   const nextPage = () => {
-    setPage((prev) => prev - 1);
+    setPage((prev) => prev + 1);
   };
 
   return (
@@ -37,10 +39,10 @@ const UserOrders = () => {
         <h1 className=" text-[26px] font-semibold ">Your Orders</h1>
       </div>
       <div className=" flex justify-between w-[70%] h-7 bg-gray-200">
-        <button onClick={prevPage}>
+        <button onClick={prevPage} disabled={page === 1}>
           <p>{"<<"}Prev</p>
         </button>
-        <button onClick={nextPage}>
+        <button onClick={nextPage} disabled={!orders.length}>
           <p>Next{">>"}</p>
         </button>
       </div>
