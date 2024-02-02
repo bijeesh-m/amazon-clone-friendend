@@ -5,9 +5,9 @@ import { myContext } from "../App";
 const Home = () => {
   const { products } = useContext(myContext);
 
-  const mobiles = products
-    .filter((item) => item.subcategory === "Smartphones")
-    .slice(0, 4);
+  const mobiles =
+    products &&
+    products.filter((item) => item.subcategory === "Smartphones").slice(0, 4);
   const fasion = products
     .filter((item) => item.category === "Fashion")
     .slice(0, 4);
