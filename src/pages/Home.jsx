@@ -8,21 +8,24 @@ const Home = () => {
   const mobiles =
     products &&
     products.filter((item) => item.subcategory === "Smartphones").slice(0, 4);
-  const fasion = products
-    .filter((item) => item.category === "Fashion")
-    .slice(0, 4);
-  const shoping = products
-    .filter((item) => item.subcategory === "Men's Clothing")
-    .slice(0, 4);
-  const kitchen = products
-    .filter((item) => item.category === "Kitchen Appliances")
-    .slice(0, 4);
-  const deals = products
-    .filter((item) => item.subcategory === "Laptop")
-    .slice(0, 5);
-  const electronics = products.filter(
-    (item) => item.category === "Electronics"
-  );
+  const fasion =
+    products &&
+    products.filter((item) => item.category === "Fashion").slice(0, 4);
+  const shoping =
+    products &&
+    products
+      .filter((item) => item.subcategory === "Men's Clothing")
+      .slice(0, 4);
+  const kitchen =
+    products &&
+    products
+      .filter((item) => item.category === "Kitchen Appliances")
+      .slice(0, 4);
+  const deals =
+    products &&
+    products.filter((item) => item.subcategory === "Laptop").slice(0, 5);
+  const electronics =
+    products && products.filter((item) => item.category === "Electronics");
 
   const like = electronics.sort(() => Math.random() - 0.5).slice(0, 6);
 
