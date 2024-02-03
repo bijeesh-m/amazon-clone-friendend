@@ -103,29 +103,30 @@ const UserOrders = () => {
           </div>
         );
       })}
-      <div className=" flex justify-end w-[70%] ">
-        <div className=" aria-disabled: w-1/5  flex justify-between items-center">
-          <button
-            className="  text-white rounded-md py-1 px-2 disabled:bg-gray-300 bg-gray-500"
-            onClick={prevPage}
-            disabled={page === 1}
-          >
-            <p>Prev</p>
-          </button>
-          <span>
-            {"<< "}
-            {page} {" >>"}
-          </span>
-          <button
-            className="  text-white rounded-md py-1 px-2 disabled:bg-gray-300 bg-gray-500"
-            onClick={nextPage}
-            disabled={orders.length < 10}
-          >
-            <p>Next</p>
-          </button>
+      {orders && (
+        <div className=" flex justify-end w-[70%] ">
+          <div className=" aria-disabled: w-1/5  flex justify-between items-center">
+            <button
+              className="  text-white rounded-md py-1 px-2 disabled:bg-gray-300 bg-gray-500"
+              onClick={prevPage}
+              disabled={page === 1}
+            >
+              <p>Prev</p>
+            </button>
+            <span>
+              {"<< "}
+              {page} {" >>"}
+            </span>
+            <button
+              className="  text-white rounded-md py-1 px-2 disabled:bg-gray-300 bg-gray-500"
+              onClick={nextPage}
+              disabled={orders.length < 10}
+            >
+              <p>Next</p>
+            </button>
+          </div>
         </div>
-      </div>
-     
+      )}
     </div>
   );
 };
