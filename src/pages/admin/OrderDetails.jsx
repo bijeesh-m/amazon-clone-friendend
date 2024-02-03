@@ -26,7 +26,13 @@ const OrderDetails = () => {
   }, []);
 
   const handleSave = (orderId) => {
-    const toastId = toast.loading("Loading...");
+    const toastId = toast.loading("Loading...", {
+      style: {
+        border: "1px solid #713200",
+        padding: "16px",
+        color: "#febd69",
+      },
+    });
     axios
       .put(
         `https://amazon-clone-votv.onrender.com/admin/order/${orderId}`,
