@@ -6,7 +6,7 @@ const Orders = () => {
   const [page, setPage] = useState(1);
   useEffect(() => {
     axios
-      .get(`https://amazon-clone-votv.onrender.com/admin/orders`, {
+      .get(`https://amazon-clone-votv.onrender.com/admin/orders?page=${page}`, {
         withCredentials: true,
       })
       .then((res) => {
@@ -17,7 +17,6 @@ const Orders = () => {
       });
   }, [page]);
 
-  console.log(process.env.REACT_APP_STRIPE_SECRET_KEY);
   const prevPage = () => {
     setPage((prev) => prev - 1);
   };
