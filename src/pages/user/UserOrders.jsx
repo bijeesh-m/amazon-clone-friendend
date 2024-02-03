@@ -74,6 +74,7 @@ const UserOrders = () => {
               {order.products.map((product) => {
                 return (
                   <div key={product._id} className=" flex  w-full  mx-4 mb-1">
+                    <p>{order.status==="Delivered"&&"Order Delivered"}</p>
                     <div className=" flex w-full justify-center space-x-3 space-y-2">
                       <div className="w-[10%]   flex justify-center items-center p-1">
                         <Link to={`/product/${product._id}`}>
