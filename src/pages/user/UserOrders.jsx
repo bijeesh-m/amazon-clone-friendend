@@ -47,7 +47,11 @@ const UserOrders = () => {
             <div className=" m-h-28   flex border   rounded-t-lg  justify-around bg-[#f0f2f2]">
               <div className="w-[40%] flex items-center justify-between mx-3 p-3">
                 <div>
-                  <span className=" text-[12px]"> ORDER PLACED </span> <br />
+                  <span className=" text-[12px]">
+                    {" "}
+                    ORDER {order.status.toUpperCase()}{" "}
+                  </span>{" "}
+                  <br />
                   <span className=" text-[14px]">{order.createdAt}</span>
                 </div>
                 <div>
