@@ -50,7 +50,7 @@ const AdminHome = () => {
       <div className="flex h-screen bg-gray-100  ">
         <div
           ref={componentRef}
-          className={`flex-col w-64 bg-gray-800 h-full absolute ${
+          className={`flex-col w-64 bg-gray-800 h-full absolute z-40 ${
             !showSidebar && "hidden"
           }`}
         >

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import toast from "react-hot-toast";
 const EditProduct = () => {
@@ -74,6 +74,15 @@ const EditProduct = () => {
 
   return (
     <div>
+      <div className="  w-full flex justify-center px-3  py-1 mt-1">
+        <div className=" w-[90%] ">
+          <Link to={'/adminHome/orders'}>
+            <button className=" rounded-md py-2 px-3 text-gray-500 bg-white shadow-md border ">
+              ⬅️Back
+            </button>
+          </Link>
+        </div>
+      </div>
       <div className=" min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
         <div className=" w-full relative py-3 sm:max-w-xl sm:mx-auto">
           <div className="relative px-4 py-10 bg-white mx-8 md:mx-0 shadow rounded-3xl sm:p-10">

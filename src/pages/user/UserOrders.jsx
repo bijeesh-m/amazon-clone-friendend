@@ -13,11 +13,9 @@ const UserOrders = () => {
       .get(`https://amazon-clone-votv.onrender.com/user/orders?page=${page}`, {
         withCredentials: true,
       })
-      // .get(`http://localhost:3002/user/orders?page=${page}`, {
-      //   withCredentials: true,
-      // })
       .then((res) => {
         console.log(res);
+
         setOrders(res.data);
         toast.remove(toastId);
       })
@@ -32,20 +30,14 @@ const UserOrders = () => {
   const nextPage = () => {
     setPage((prev) => prev + 1);
   };
+  console.log(orders.length);
 
   return (
     <div className="w-full min-h-[100vh]  flex items-center flex-col p-4 ">
       <div className="     h-10 w-[70%] flex items-center top-23 ">
         <h1 className=" text-[26px] font-semibold ">Your Orders</h1>
       </div>
-      <div className=" flex justify-between w-[70%] h-7 bg-gray-200">
-        <button onClick={prevPage} disabled={page === 1}>
-          <p>{"<<"}Prev</p>
-        </button>
-        <button onClick={nextPage} disabled={!orders.length}>
-          <p>Next{">>"}</p>
-        </button>
-      </div>
+
       {orders.map((order) => {
         return (
           <div
@@ -111,6 +103,29 @@ const UserOrders = () => {
           </div>
         );
       })}
+      <div className=" flex justify-end w-[70%] ">
+        <div className=" aria-disabled: w-1/5  flex justify-between items-center">
+          <button
+            className="  text-white rounded-md py-1 px-2 disabled:bg-gray-300 bg-gray-500"
+            onClick={prevPage}
+            disabled={page === 1}
+          >
+            <p>Prev</p>
+          </button>
+          <span>
+            {"<< "}
+            {page} {" >>"}
+          </span>
+          <button
+            className="  text-white rounded-md py-1 px-2 disabled:bg-gray-300 bg-gray-500"
+            onClick={nextPage}
+            disabled={orders.length < 10}
+          >
+            <p>Next</p>
+          </button>
+        </div>
+      </div>
+     
     </div>
   );
 };

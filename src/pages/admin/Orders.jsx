@@ -3,20 +3,30 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 const Orders = () => {
   const [orders, setOrders] = useState([]);
-
+  const [page, setPage] = useState(1);
   useEffect(() => {
     axios
-      .get(`https://amazon-clone-votv.onrender.com/admin/orders`, { withCredentials: true })
+      .get(`https://amazon-clone-votv.onrender.com/admin/orders`, {
+        withCredentials: true,
+      })
       .then((res) => {
         setOrders(res.data);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [page]);
+
+  console.log(process.env.REACT_APP_STRIPE_SECRET_KEY);
+  const prevPage = () => {
+    setPage((prev) => prev - 1);
+  };
+  const nextPage = () => {
+    setPage((prev) => prev + 1);
+  };
   return (
-    <div className=" h-full flex justify-center items-center p-3">
-      <div className=" w-[90%] h-full bg-white border rounded-lg ">
+    <div className="  flex justify-center flex-col items-center p-3">
+      <div className=" w-[90%] min-h-[80vh] bg-white border rounded-lg ">
         <div className=" w-full   h-12 flex items-center p-1">
           <input
             type="text"
@@ -24,7 +34,7 @@ const Orders = () => {
             placeholder="Search users"
           />
         </div>
-        <div className="  w-full text-[#8794a1] text-[12px] h-14 bg-[#f8fafd] flex justify-between p-4 items-center">
+        <div className="  w-full text-[#8794a1] text-sm   h-14 bg-[#f8fafd] flex justify-between p-4 items-center">
           <div className=" w-1/4 bg ">
             <p>ORDER</p>
           </div>
@@ -43,25 +53,51 @@ const Orders = () => {
             <Link to={`/adminHome/orderdetails/${order.orderId}`}>
               <div
                 key={order._id}
-                className=" w-full h-16 text-[#738292] text-[14px] hover:bg-[#f2f3f5] flex justify-between p-4 items-center"
+                className=" w-full h-16 text-[#738292] hover:bg-[#f2f3f5] flex justify-between p-4 items-center"
               >
                 <div className=" w-1/4 bg ">
-                  <p>{order.orderId}</p>
+                  <p className=" text-xs md:text-base ">{order.orderId}</p>
                 </div>
                 <div className=" w-1/4 bg ">
-                  <p>{order.createdAt}</p>
+                  <p className=" text-xs md:text-base ">
+                    {new Date(order.createdAt).toLocaleDateString()}
+                  </p>
                 </div>
 
                 <div className=" w-1/4 bg ">
-                  <p>{order.user.username}</p>
+                  <p className=" text-xs md:text-base ">
+                    {order.user.username}
+                  </p>
                 </div>
                 <div className=" w-1/4 bg ">
-                  <p>{order.status}</p>
+                  <p className=" text-xs md:text-base ">{order.status}</p>
                 </div>
               </div>
             </Link>
           );
         })}
+      </div>
+      <div className=" flex justify-end w-[90%]   mt-1">
+        <div className="  w-1/5  flex justify-between items-center">
+          <button
+            className="  text-white rounded-md py-1 px-2 disabled:bg-gray-300 bg-gray-500"
+            onClick={prevPage}
+            disabled={page === 1}
+          >
+            <p>Prev</p>
+          </button>
+          <span>
+            {"<< "}
+            {page} {" >>"}
+          </span>
+          <button
+            className="  text-white rounded-md py-1 px-2 disabled:bg-gray-300 bg-gray-500"
+            onClick={nextPage}
+            disabled={orders.length < 10}
+          >
+            <p>Next</p>
+          </button>
+        </div>
       </div>
     </div>
   );

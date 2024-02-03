@@ -66,6 +66,7 @@ function App() {
     }
   }, [user, products]);
 
+  console.log(user);
   return (
     <myContext.Provider
       value={{

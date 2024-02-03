@@ -64,7 +64,7 @@ const Allproducts = () => {
             onClick={() => handleSelectCategory("Fashion")}
           >
             Fashion
-            <div className=" arrow-box hidden   absolute  top-10  -left-12 bg-white border shadow-md p-2 group-hover:inline">
+            <div className=" arrow-box hidden   absolute z-20  top-10  -left-12 bg-white border shadow-md p-2 group-hover:inline">
               <div className=" text-[12px] font-thin space-y-3 w-[150px] p-3 cursor-pointer">
                 <li onClick={() => handleSelectSubCategory("Men's Clothing")}>
                   Men's Clothing

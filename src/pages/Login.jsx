@@ -23,7 +23,7 @@ const Login = () => {
     axios
       .post("https://amazon-clone-votv.onrender.com/user/login", inputValues, {
         withCredentials: true,
-      })
+      })  
       .then((res) => {
         if (res.data.data === "success") {
           localStorage.setItem("user", res.data.token);
