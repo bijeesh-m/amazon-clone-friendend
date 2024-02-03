@@ -11,8 +11,7 @@ const OrderDetails = () => {
   const { id } = useParams();
   useEffect(() => {
     axios
-      // .get(`https://amazon-clone-votv.onrender.com/admin/orders/${id}`)
-      .get(`http://localhost:3002/admin/orders/${id}`)
+      .get(`https://amazon-clone-votv.onrender.com/admin/orders/${id}`)
       .then((res) => {
         setOrder(res.data);
         setProducts(res.data.products);
