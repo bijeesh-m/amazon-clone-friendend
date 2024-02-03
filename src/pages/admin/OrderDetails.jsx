@@ -11,7 +11,9 @@ const OrderDetails = () => {
   const { id } = useParams();
   useEffect(() => {
     axios
-      .get(`https://amazon-clone-votv.onrender.com/admin/orders/${id}`)
+      .get(`https://amazon-clone-votv.onrender.com/admin/orders/${id}`, {
+        withCredentials: true,
+      })
       .then((res) => {
         setOrder(res.data);
         setProducts(res.data.products);
@@ -25,9 +27,13 @@ const OrderDetails = () => {
 
   const handleSave = (orderId) => {
     axios
-      .put(`https://amazon-clone-votv.onrender.com/admin/order/${orderId}`, {
-        orderStatus,
-      })
+      .put(
+        `https://amazon-clone-votv.onrender.com/admin/order/${orderId}`,
+        {
+          orderStatus,
+        },
+        { withCredentials: true }
+      )
       .then((res) => {
         toast.success(res.data);
       })

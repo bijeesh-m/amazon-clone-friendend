@@ -55,7 +55,8 @@ const EditProduct = () => {
       axios
         .put(
           `https://amazon-clone-votv.onrender.com/admin/product/${id}`,
-          productDetails
+          productDetails,
+          { withCredentials: true }
         )
         .then((res) => {
           toast.success(res.data, {
@@ -76,7 +77,7 @@ const EditProduct = () => {
     <div>
       <div className="  w-full flex justify-center px-3  py-1 mt-1">
         <div className=" w-[90%] ">
-          <Link to={'/adminHome/orders'}>
+          <Link to={"/adminHome/orders"}>
             <button className=" rounded-md py-2 px-3 text-gray-500 bg-white shadow-md border ">
               ⬅️Back
             </button>

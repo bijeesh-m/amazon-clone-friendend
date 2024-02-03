@@ -15,7 +15,8 @@ const Addproduct = () => {
     axios
       .post(
         "https://amazon-clone-votv.onrender.com/admin/addproduct",
-        productDetails
+        productDetails,
+        { withCredentials: true }
       )
       .then((res) => {
         toast.success("Product added successfully", {

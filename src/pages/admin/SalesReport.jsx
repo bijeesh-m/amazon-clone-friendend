@@ -12,7 +12,9 @@ const SalesReport = () => {
   const [totalSale, setTotalSale] = useState({});
   useEffect(() => {
     axios
-      .get("https://amazon-clone-votv.onrender.com/admin/salesreport")
+      .get("https://amazon-clone-votv.onrender.com/admin/salesreport", {
+        withCredentials: true,
+      })
       .then((res) => {
         setTotalSale(res.data);
       })

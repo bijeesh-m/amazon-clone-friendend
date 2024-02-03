@@ -9,7 +9,9 @@ const Allproducts = () => {
 
   useEffect(() => {
     axios
-      .get("https://amazon-clone-votv.onrender.com/admin/products")
+      .get("https://amazon-clone-votv.onrender.com/admin/products", {
+        withCredentials: true,
+      })
       .then((res) => {
         setProducts(res.data);
       })
@@ -25,7 +27,8 @@ const Allproducts = () => {
   const handleSelectSubCategory = (selectedSubCategory) => {
     axios
       .get(
-        `https://amazon-clone-votv.onrender.com/admin/products/${selectedSubCategory}`
+        `https://amazon-clone-votv.onrender.com/admin/products/${selectedSubCategory}`,
+        { withCredentials: true }
       )
       .then((res) => {
         setFdata(res.data);

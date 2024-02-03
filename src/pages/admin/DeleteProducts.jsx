@@ -31,7 +31,10 @@ const DeleteProducts = () => {
   };
   const handleSelectSubCategory = (selectedSubCategory) => {
     axios
-      .get(`https://amazon-clone-votv.onrender.com/admin/products/${selectedSubCategory}`)
+      .get(
+        `https://amazon-clone-votv.onrender.com/admin/products/${selectedSubCategory}`,
+        { withCredentials: true }
+      )
       .then((res) => {
         setFdata(res.data);
       })
@@ -41,7 +44,9 @@ const DeleteProducts = () => {
   };
   const handleDelete = (prodId) => {
     axios
-      .delete(`https://amazon-clone-votv.onrender.com/admin/product/${id}`)
+      .delete(`https://amazon-clone-votv.onrender.com/admin/product/${id}`, {
+        withCredentials: true,
+      })
       .then((res) => {
         setModalOpen(!isModalOpen);
         toast.success("Product deleted");
