@@ -15,7 +15,7 @@ const Category = () => {
 
   useEffect(() => {
     setSubCategory("");
-    location.reload;
+    location.reload();
     axios
       .get(`https://amazon-clone-votv.onrender.com/user/products/${category}`)
       .then((res) => {
