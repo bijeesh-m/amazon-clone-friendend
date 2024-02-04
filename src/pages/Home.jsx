@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import HomeCarousel from "../components/Carousel";
 import { myContext } from "../App";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const { products } = useContext(myContext);
@@ -67,11 +68,13 @@ const Home = () => {
                     return (
                       <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  items-center  h-[25vh] ">
                         <div className="  bg-yellow-200">
-                          <img
-                            className=" w-[75px] h-[95px]"
-                            src={item.image}
-                            alt="mobile"
-                          />
+                          <Link to={`/product/${item._id}`}>
+                            <img
+                              className=" w-[75px] h-[95px]"
+                              src={item.image}
+                              alt="mobile"
+                            />
+                          </Link>
                         </div>
                         <p className="text-[13px]">{item.title}</p>
                       </div>
@@ -87,11 +90,13 @@ const Home = () => {
                   {mobiles.map((item) => {
                     return (
                       <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly items-center  h-[25vh] ">
-                        <img
-                          className=" w-[70px] "
-                          src={item.image}
-                          alt="mobile"
-                        />
+                        <Link to={`/product/${item._id}`}>
+                          <img
+                            className=" w-[70px] "
+                            src={item.image}
+                            alt="mobile"
+                          />
+                        </Link>
                         <p className="text-[13px]">{item.title}</p>
                       </div>
                     );
@@ -105,11 +110,13 @@ const Home = () => {
                     return (
                       <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  items-center  h-[25vh] ">
                         <div className="  bg-yellow-200">
-                          <img
-                            className=" w-[75px] h-[95px]"
-                            src={item.image}
-                            alt="mobile"
-                          />
+                          <Link to={`/product/${item._id}`}>
+                            <img
+                              className=" w-[75px] h-[95px]"
+                              src={item.image}
+                              alt="mobile"
+                            />
+                          </Link>
                         </div>
                         <p className="text-[13px]">{item.title}</p>
                       </div>
@@ -128,11 +135,13 @@ const Home = () => {
               {deals.map((item) => {
                 return (
                   <div className="w-1/5  h-full rounded-md overflow-hidden shadow-lg">
-                    <img
-                      className="w-full h-[40vh]"
-                      src={item.image}
-                      alt="tDeals"
-                    />
+                    <Link to={`/product/${item._id}`}>
+                      <img
+                        className="w-full h-[40vh]"
+                        src={item.image}
+                        alt="tDeals"
+                      />
+                    </Link>
                     <p className="text-l  text-center">
                       Best Styles in Laptops
                     </p>
@@ -155,7 +164,13 @@ const Home = () => {
               {like.map((item) => {
                 return (
                   <div className="w-1/6  rounded-md overflow-hidden ">
-                    <img className=" h-[30vh] " src={item.image} alt="tDeals" />
+                    <Link to={`/product/${item._id}`}>
+                      <img
+                        className=" h-[30vh] "
+                        src={item.image}
+                        alt="tDeals"
+                      />
+                    </Link>
                   </div>
                 );
               })}
