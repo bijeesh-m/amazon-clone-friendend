@@ -8,11 +8,10 @@ const Category = () => {
   const [products, setProducts] = useState([]);
   const { user, cartCount, setCartCount } = useContext(myContext);
   const [subCategory, setSubCategory] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const { category } = useParams();
 
   useEffect(() => {
-    setLoading(true);
     setSubCategory("");
     axios
       .get(`https://amazon-clone-votv.onrender.com/user/products/${category}`)
