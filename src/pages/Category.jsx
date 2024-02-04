@@ -15,7 +15,7 @@ const Category = () => {
 
   useEffect(() => {
     setSubCategory("");
-    // setTimeout(() => {
+    location.reload;
     axios
       .get(`https://amazon-clone-votv.onrender.com/user/products/${category}`)
       .then((res) => {
@@ -23,7 +23,6 @@ const Category = () => {
         setProducts(res.data);
       })
       .catch((err) => {});
-    // }, 3000);
   }, [category, reload]);
 
   const sortedProducts = products.sort((a, b) => {
@@ -64,17 +63,14 @@ const Category = () => {
       });
   };
 
-  console.log(sortBy);
   return (
     <div className="  flex flex-col items-center">
       {loading ? (
         <div className="  w-full h-[85vh] flex justify-center items-center  bg-white">
-          <div class="spinner-grow " role="status">
-            <img
-              src="https://res.cloudinary.com/dunf6rko6/image/upload/v1707026965/loading-4x-gray._CB485916689__yee9mc.gif"
-              alt="loading"
-            />
-          </div>
+          <img
+            src="https://res.cloudinary.com/dunf6rko6/image/upload/v1707026965/loading-4x-gray._CB485916689__yee9mc.gif"
+            alt="loading"
+          />
         </div>
       ) : (
         <div>
