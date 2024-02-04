@@ -192,8 +192,8 @@ const Header = () => {
           </div>
         )}
       </div>
-      <div className="action-bar">
-        <div className="left-actionbar">
+      <div className=" flex h-10 bg-[#232f3e] text-white text-sm w-full justify-between">
+        <div className=" flex items-center gap-3 mx-2">
           <div style={{ display: "flex", alignItems: "center" }}>
             <img
               width={20}
@@ -202,21 +202,23 @@ const Header = () => {
             />
             &nbsp;All
           </div>
-          <div>Fresh</div>
-          <div>Prime</div>
+          {/* <div>Fresh</div> */}
+          {/* <div>Prime</div> */}
           <Link to={`/products/Fashion`}>
             <div>Fashion</div>
           </Link>
           <Link to={`/products/Electronics`}>
             <div>Electronics</div>
           </Link>
-          <div>Today's Deals</div>
-          <div>Subscribe & Save</div>
+          <Link to={`/products/Kitchen Appliances`}>
+            <div>Kitchen & Appliances</div>
+          </Link>
+          {/* <div>Subscribe & Save</div>
           <div>Amazon miniTV</div>
           <div>Sell</div>
-          <div>Buy Again</div>
+          <div>Buy Again</div> */}
         </div>
-        <div className="right-actionbar">New Launches Shop Now</div>
+        <div className=" flex   text-base items-center mx-3">New Launches Shop Now</div>
       </div>
     </div>
   );

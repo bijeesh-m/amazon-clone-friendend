@@ -8,26 +8,38 @@ const Category = () => {
   const [products, setProducts] = useState([]);
   const { user, cartCount, setCartCount } = useContext(myContext);
   const [subCategory, setSubCategory] = useState("");
+  const [sortBy, setSortBy] = useState("high-to-low");
   const [loading, setLoading] = useState(true);
+  const [reload, setReload] = useState(false);
   const { category } = useParams();
 
   useEffect(() => {
     setSubCategory("");
     // setTimeout(() => {
-      axios
-        .get(`https://amazon-clone-votv.onrender.com/user/products/${category}`)
-        // .get(`http://localhost:3002/user/products/${category}`)
-        .then((res) => {
-          setLoading(false);
-          setProducts(res.data);
-        })
-        .catch((err) => {});
+    axios
+      .get(`https://amazon-clone-votv.onrender.com/user/products/${category}`)
+      .then((res) => {
+        setLoading(false);
+        setProducts(res.data);
+      })
+      .catch((err) => {});
     // }, 3000);
-  }, [category]);
+  }, [category, reload]);
+
+  const sortedProducts = products.sort((a, b) => {
+    const priceA = a.price;
+    const priceB = b.price;
+    if (sortBy === "high-to-low") {
+      return priceB - priceA;
+    }
+    return priceA - priceB;
+  });
 
   const filteredProducts = subCategory
-    ? products.filter((product) => product.subcategory === subCategory)
-    : products;
+    ? sortedProducts.filter((product) => product.subcategory === subCategory)
+    : sortedProducts;
+
+  const subcategories = [...new Set(products.map((item) => item.subcategory))];
 
   const handleAddToCart = (prodId) => {
     const toastId = toast.loading("Loading...");
@@ -52,6 +64,7 @@ const Category = () => {
       });
   };
 
+  console.log(sortBy);
   return (
     <div className="  flex flex-col items-center">
       {loading ? (
@@ -70,7 +83,7 @@ const Category = () => {
               <h1 className=" font-bold">{category}</h1>
               <li className="group relative flex h-full items-center justify-center ">
                 Mobiles & Accessories
-                <div className=" hidden  h-[60vh] absolute mt-[400px] left-0 bg-white border shadow-md p-2 group-hover:inline">
+                <div className=" hidden arrow  h-[60vh] absolute mt-[69vh] left-0 bg-white border shadow-md p-2 group-hover:inline">
                   <div className=" text-[13px] flex w-[100%] p-3  ">
                     <div className=" w-[200px]">
                       <li>Mobiles</li>
@@ -101,7 +114,7 @@ const Category = () => {
               </li>
               <li className="group relative h-full flex items-center ">
                 Laptop & Accessories
-                <ul className=" hidden justify-evenly  h-[60vh] absolute  mt-[400px] left-0 bg-white border shadow-md p-2 group-hover:inline">
+                <ul className=" hidden arrow justify-evenly  h-[60vh] absolute  mt-[69vh] left-0 bg-white border shadow-md p-2 group-hover:inline">
                   <div className=" text-[13px] flex w-[100%] p-3 ">
                     <div className=" w-[200px]">
                       <li>Laptop</li>
@@ -132,7 +145,7 @@ const Category = () => {
               </li>
               <li className="group relative h-full flex items-center ">
                 Laptop & Accessories
-                <ul className=" hidden justify-evenly  h-[60vh] absolute  mt-[400px] left-0 bg-white border shadow-md p-2 group-hover:inline">
+                <ul className=" hidden arrow  justify-evenly  h-[60vh] absolute  mt-[69vh] left-0 bg-white border shadow-md p-2 group-hover:inline">
                   <div className=" text-[13px] flex w-[100%] p-3 ">
                     <div className=" w-[200px]">
                       <li>Laptop</li>
@@ -171,55 +184,38 @@ const Category = () => {
             <select
               className=" focus:outline-none border rounded bg-[#F0F2F2] shadow-sm h-[20px] mx-2"
               name="sort"
+              onChange={(e) => setSortBy(e.target.value)}
             >
-              <option value="low to high">Price:Low to high</option>
-              <option value="low to high">Price:High to low</option>
+              <option value="low-to-high">Price:Low to high</option>
+              <option value="high-to-low" selected>
+                Price:High to low
+              </option>
             </select>
           </div>
           <div className="  flex">
             <div className=" p-2 pt-4  w-[15%] flex flex-col">
               <h1 className=" text-[18px] mb-2 font-bold">Category</h1>
-              <h3 className=" text-[16px] font-semibold mb-1">
+              <h3
+                className=" text-[16px] font-semibold mb-1 cursor-pointer"
+                onClick={() => setReload(!reload)}
+              >
                 {category}
                 {">>"}
               </h3>
-              {category === "Electronics" ? (
+              {category && (
                 <>
-                  <h5
-                    className=" cursor-pointer mb-1"
-                    onClick={() => {
-                      setSubCategory("Smartphones");
-                    }}
-                  >
-                    Mobiles
-                  </h5>
-                  <h5
-                    className=" cursor-pointer mb-1"
-                    onClick={() => {
-                      setSubCategory("Laptop");
-                    }}
-                  >
-                    Laptops
-                  </h5>
-                </>
-              ) : (
-                <>
-                  <h5
-                    className=" cursor-pointer"
-                    onClick={() => {
-                      setSubCategory("Men's Clothing");
-                    }}
-                  >
-                    Men's Clothing
-                  </h5>
-                  <h5
-                    className=" cursor-pointer"
-                    onClick={() => {
-                      setSubCategory("Women's Clothing");
-                    }}
-                  >
-                    Women's Clothing
-                  </h5>
+                  {subcategories.map((item) => {
+                    return (
+                      <h5
+                        className=" cursor-pointer mb-1"
+                        onClick={() => {
+                          setSubCategory(item);
+                        }}
+                      >
+                        {item}
+                      </h5>
+                    );
+                  })}
                 </>
               )}
             </div>{" "}
@@ -255,7 +251,13 @@ const Category = () => {
                           <p className=" text-[14px]">
                             Get it by{" "}
                             <span className=" font-semibold">
-                              Sunday, 17 December
+                              {(() => {
+                                const currentDate = new Date();
+                                currentDate.setDate(currentDate.getDate() + 3);
+                                const formattedDate =
+                                  currentDate.toLocaleDateString();
+                                return formattedDate;
+                              })()}
                             </span>{" "}
                             <br />
                             FREE Delivery by Amazon
@@ -264,7 +266,7 @@ const Category = () => {
                             onClick={() => handleAddToCart(data._id)}
                             className=" flex items-start mb-2"
                           >
-                            <p className="text-[13px] p-2  bg-[#FFD814] rounded-2 h-[30px] w[90px]">
+                            <p className="text-[13px] py-1 px-2  bg-[#FFD814] rounded-2 ">
                               Add to Cart
                             </p>
                           </button>

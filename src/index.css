@@ -25,6 +25,16 @@ body::-webkit-scrollbar {
   border-style: solid;
   border-color: transparent transparent white transparent; /* Set the arrow color */
 }
+.arrow::before {
+  content: "";
+  position: absolute;
+  top: -10px; /* Adjust this value based on your design */
+  left: 50%;
+  margin-left: -100px; /* Half of the arrow width */
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent; /* Set the arrow color */
+}
 
 /* .animate {
   
