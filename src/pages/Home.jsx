@@ -47,11 +47,13 @@ const Home = () => {
                     return (
                       <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  items-center  h-[25vh] ">
                         <div className="  bg-yellow-200">
-                          <img
-                            className=" w-[75px] h-[95px]"
-                            src={item.image}
-                            alt="mobile"
-                          />
+                          <Link to={`/product/${item._id}`}>
+                            <img
+                              className=" w-[75px] h-[95px]"
+                              src={item.image}
+                              alt="mobile"
+                            />
+                          </Link>
                         </div>
                         <p className="text-[13px]">{item.title}</p>
                       </div>
