@@ -194,14 +194,16 @@ const Header = () => {
       </div>
       <div className=" flex h-10 bg-[#232f3e] text-white text-sm w-full justify-between">
         <div className=" flex items-center gap-3 mx-2">
-          <div style={{ display: "flex", alignItems: "center" }}>
-            <img
-              width={20}
-              src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665520/menu_lj46zj.png"
-              alt="menu"
-            />
-            &nbsp;All
-          </div>
+          <Link to={`/products`}>
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <img
+                width={20}
+                src="https://res.cloudinary.com/dunf6rko6/image/upload/v1703665520/menu_lj46zj.png"
+                alt="menu"
+              />
+              &nbsp;All
+            </div>
+          </Link>
           {/* <div>Fresh</div> */}
           {/* <div>Prime</div> */}
           <Link to={`/products/Fashion`}>
@@ -218,7 +220,9 @@ const Header = () => {
           <div>Sell</div>
           <div>Buy Again</div> */}
         </div>
-        <div className=" flex   text-base items-center mx-3">New Launches Shop Now</div>
+        <div className=" flex   text-base items-center mx-3">
+          New Launches Shop Now
+        </div>
       </div>
     </div>
   );
