@@ -30,7 +30,7 @@ const OrderDetails = () => {
       style: {
         border: "1px solid #713200",
         padding: "16px",
-        color: "#febd69",
+        color: "gray",
       },
     });
     axios
@@ -42,7 +42,7 @@ const OrderDetails = () => {
         { withCredentials: true }
       )
       .then((res) => {
-        toast.success("Look at my styles.", {
+        toast.success("Changes saved.", {
           id: toastId,
           style: {
             border: "1px solid #713200",
