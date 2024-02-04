@@ -77,7 +77,7 @@ const EditProduct = () => {
     <div>
       <div className="  w-full flex justify-center px-3  py-1 mt-1">
         <div className=" w-[90%] ">
-          <Link to={"/adminHome/orders"}>
+          <Link to={"/adminHome/allproducts"}>
             <button className=" rounded-md py-2 px-3 text-gray-500 bg-white shadow-md border ">
               ⬅️Back
             </button>
