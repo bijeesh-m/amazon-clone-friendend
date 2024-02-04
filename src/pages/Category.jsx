@@ -53,7 +53,7 @@ const Category = () => {
     <div className="  flex flex-col items-center">
       {/* {loading && ( */}
         <div
-          class="spinner-grow w-[100%] h-full flex justify-center items-center"
+          class="spinner-grow "
           role="status"
         >
           <span class="visually-hidden">Loading...</span>
