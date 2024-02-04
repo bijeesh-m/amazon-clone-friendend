@@ -67,6 +67,7 @@ const Category = () => {
       {loading ? (
         <div className="  w-full h-[85vh] flex justify-center items-center  bg-white">
           <img
+            width={100}
             src="https://res.cloudinary.com/dunf6rko6/image/upload/v1707026965/loading-4x-gray._CB485916689__yee9mc.gif"
             alt="loading"
           />
