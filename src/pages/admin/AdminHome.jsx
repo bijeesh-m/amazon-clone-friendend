@@ -28,12 +28,13 @@ const AdminHome = () => {
   }, []);
 
   const handleLogOut = () => {
+    const toastId = toast.loading("Loading...");
     axios
       .delete("https://amazon-clone-votv.onrender.com/admin/logout", {
         withCredentials: true,
       })
       .then((res) => {
-        toast.success("Logout success");
+        toast.success("Logout success", { id: toastId });
         navigate("/adminlogin");
       })
       .catch((err) => {

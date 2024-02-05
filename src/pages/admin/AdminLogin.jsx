@@ -56,15 +56,19 @@ const AdminLogin = () => {
             return errors;
           }}
           onSubmit={(values) => {
+            const toastId = toast.loading("Loading...");
             axios
-              .post("https://amazon-clone-votv.onrender.com/admin/login", values, {
-                withCredentials: true,
-              })
+              .post(
+                "https://amazon-clone-votv.onrender.com/admin/login",
+                values,
+                {
+                  withCredentials: true,
+                }
+              )
               .then((res) => {
-                toast.success("Login success");
+                toast.success("Login success", { id: toastId });
                 navigate("/adminHome");
               });
-            
           }}
         >
           {({ values, errors, touched, handleChange, handleSubmit }) => (
