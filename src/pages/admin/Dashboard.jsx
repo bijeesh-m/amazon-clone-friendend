@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Dashboard = () => {
   return (
     <div>
-      <section className="container p-6 mx-auto space-y-3 bg-red-400">
+      <section className="container p-6 mx-auto space-y-3 ">
         <div className="  flex items-center justify-center">
           <div className=" w-full grid gap-8 my-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             <div className="w-full max-w-xs text-center">
