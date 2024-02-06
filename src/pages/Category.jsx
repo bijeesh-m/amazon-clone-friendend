@@ -79,7 +79,7 @@ const Category = () => {
               <h1 className=" font-bold">{category}</h1>
               <li className="group relative flex h-full items-center justify-center ">
                 Mobiles & Accessories
-                <div className=" hidden arrow  h-[60vh] absolute mt-[69vh] left-0 bg-white border shadow-md p-2 group-hover:inline">
+                <div className=" hidden arr-ow  h-[60vh] absolute mt-[69vh] left-0 bg-white border shadow-md p-2 group-hover:inline">
                   <div className=" text-[13px] flex w-[100%] p-3  ">
                     <div className=" w-[200px]">
                       <li>Mobiles</li>
@@ -110,7 +110,7 @@ const Category = () => {
               </li>
               <li className="group relative h-full flex items-center ">
                 Laptop & Accessories
-                <ul className=" hidden arrow justify-evenly  h-[60vh] absolute  mt-[69vh] left-0 bg-white border shadow-md p-2 group-hover:inline">
+                <ul className=" hidden arr-ow justify-evenly  h-[60vh] absolute  mt-[69vh] left-0 bg-white border shadow-md p-2 group-hover:inline">
                   <div className=" text-[13px] flex w-[100%] p-3 ">
                     <div className=" w-[200px]">
                       <li>Laptop</li>
@@ -141,7 +141,7 @@ const Category = () => {
               </li>
               <li className="group relative h-full flex items-center ">
                 Laptop & Accessories
-                <ul className=" hidden arrow  justify-evenly  h-[60vh] absolute  mt-[69vh] left-0 bg-white border shadow-md p-2 group-hover:inline">
+                <ul className=" hidden arr-ow  justify-evenly  h-[60vh] absolute  mt-[69vh] left-0 bg-white border shadow-md p-2 group-hover:inline">
                   <div className=" text-[13px] flex w-[100%] p-3 ">
                     <div className=" w-[200px]">
                       <li>Laptop</li>
