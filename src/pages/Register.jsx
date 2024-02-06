@@ -98,6 +98,8 @@ const Register = () => {
       });
   };
 
+  console.log(process.env.REACT_APP_GOOGLE_CLIENT_ID);
+
   const verifyOtp = () => {
     const vToastId = toast.loading("Verifing OTP...");
     axios
