@@ -16,7 +16,9 @@ const DeleteProducts = () => {
   };
   useEffect(() => {
     axios
-      .get("https://amazon-clone-votv.onrender.com/admin/products")
+      .get("https://amazon-clone-votv.onrender.com/admin/products", {
+        withCredentials: true,
+      })
       .then((res) => {
         setProducts(res.data);
       })
