@@ -55,7 +55,7 @@ const AdminHome = () => {
             !showSidebar && "hidden"
           }`}
         >
-          <div className="flex items-center justify-evenly h-16 bg-gray-900">
+          <div className="flex items-center justify-evenly  h-[9.5%] bg-">
             <button
               onClick={toggleSidebar}
               className="text-gray-500  mx-2  w-1/7 focus:outline-none focus:text-gray-700"
@@ -70,9 +70,10 @@ const AdminHome = () => {
               Sidebar
             </span>
           </div>
-          <div className="flex flex-col  justify-between h-[89vh]  overflow-y-auto ">
+          <div className=" h-[90.5%]  flex flex-col  justify-between ">
             <nav className="flex-1   px-2 py-4 bg-gray-800">
               <Link
+                onClick={() => setShowSidebar(false)}
                 to={"/adminHome"}
                 className="flex  items-center px-4 py-2 text-gray-100 hover:bg-gray-700"
               >
