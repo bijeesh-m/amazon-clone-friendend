@@ -100,7 +100,7 @@ const Product = () => {
           </div>
         </div>
         <div className="flex flex-col h-[500px]      justify-evenly ">
-          <h1 className=" text-[24px]">{product.description}</h1>
+          <h1 className=" text-[24px]">{product.description}s</h1>
           <h2 className=" text-[28px]">₹{product.price}</h2>
           <div>
             <img
