@@ -33,18 +33,18 @@ const Orders = () => {
             placeholder="Search users"
           />
         </div>
-        <div className="  w-full text-[#8794a1] text-sm   h-14 bg-[#f8fafd] flex justify-between p-4 items-center">
-          <div className=" w-1/4 bg ">
-            <p>ORDER</p>
+        <div className="  w-full text-[#8794a1]  gap-1 text-sm  h-14 bg-[#f8fafd] flex justify-between p-4 items-center">
+          <div className=" w-1/4  bg-red-200 h-12">
+            <p className="     ">ORDER</p>
           </div>
-          <div className=" w-1/4 bg ">
-            <p>DATE</p>
+          <div className=" w-1/4  bg-red-200 h-12">
+            <p className="     ">DATE</p>
           </div>
-          <div className=" w-1/4 bg ">
-            <p>CUSTOMER</p>
+          <div className=" w-1/4  bg-red-200 h-12">
+            <p className="     ">CUSTOMER</p>
           </div>
-          <div className=" w-1/4 bg ">
-            <p>PAYMENT STATUS</p>
+          <div className=" w-1/4  bg-red-200 h-12">
+            <p className="     ">PAYMENT STATUS</p>
           </div>
         </div>
         {orders.map((order) => {
@@ -77,7 +77,7 @@ const Orders = () => {
         })}
       </div>
       <div className=" flex justify-end w-[90%]   mt-1">
-        <div className="  w-1/5  flex justify-between items-center">
+        <div className="   lg:w-1/5  flex justify-between items-center">
           <button
             className="  text-white rounded-md py-1 px-2 disabled:bg-gray-300 bg-gray-500"
             onClick={prevPage}

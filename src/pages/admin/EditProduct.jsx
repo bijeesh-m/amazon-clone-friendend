@@ -12,7 +12,9 @@ const EditProduct = () => {
 
   useEffect(() => {
     axios
-      .get(`https://amazon-clone-votv.onrender.com/admin/product/${id}`)
+      .get(`https://amazon-clone-votv.onrender.com/admin/product/${id}`, {
+        withCredentials: true,
+      })
       .then((res) => {
         setProductDetails(res.data);
         updateSubcategories(res.data.category); // Update subcategories initially
@@ -23,7 +25,6 @@ const EditProduct = () => {
   }, [id]);
 
   const updateSubcategories = (category) => {
-    // Update subcategories based on the selected category
     if (category === "Electronics") {
       setSubcategories(["Smartphones", "Laptop"]);
     } else if (category === "Fashion") {
