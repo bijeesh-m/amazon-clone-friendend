@@ -46,7 +46,7 @@ const Home = () => {
                   {shoping.map((item) => {
                     return (
                       <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  items-center  h-[25vh] ">
-                        <div className="  bg-yellow-200">
+                        <div>
                           <Link to={`/product/${item._id}`}>
                             <img
                               className=" w-[75px] h-[95px]"
@@ -69,7 +69,7 @@ const Home = () => {
                   {kitchen.map((item) => {
                     return (
                       <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  items-center  h-[25vh] ">
-                        <div className="  bg-yellow-200">
+                        <div>
                           <Link to={`/product/${item._id}`}>
                             <img
                               className=" w-[75px] h-[95px]"
@@ -111,7 +111,7 @@ const Home = () => {
                   {fasion.map((item) => {
                     return (
                       <div className="p-1 mb-2 bg-[#F7F7F7]  flex flex-col justify-evenly  items-center  h-[25vh] ">
-                        <div className="  bg-yellow-200">
+                        <div>
                           <Link to={`/product/${item._id}`}>
                             <img
                               className=" w-[75px] h-[95px]"

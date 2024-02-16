@@ -15,7 +15,6 @@ const UserOrders = () => {
       })
       .then((res) => {
         console.log(res);
-
         setOrders(res.data);
         toast.remove(toastId);
       })
