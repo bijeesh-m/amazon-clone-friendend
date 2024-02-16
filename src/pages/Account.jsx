@@ -6,12 +6,18 @@ import { myContext } from "../App";
 
 const Account = () => {
   const { setCartCount } = useContext(myContext);
+  const { user } = useContext(myContext);
   const navigate = useNavigate();
 
-  const handleLogOut = () => {
+  const handleLogOut = (user) => {
     localStorage.clear();
+    google.accounts.id.revoke(user.email, (done) => {
+      console.log("consent revoked");
+    });
     axios
-      .get("https://amazon-clone-votv.onrender.com/user/logout", { withCredentials: true })
+      .get("https://amazon-clone-votv.onrender.com/user/logout", {
+        withCredentials: true,
+      })
       .then((res) => {
         toast.success("Logout success");
         navigate("/");
@@ -150,7 +156,7 @@ const Account = () => {
             </div>
           </div>
           <div
-            onClick={handleLogOut}
+            onClick={() => handleLogOut(user)}
             className=" cursor-pointer border flex p-2 rounded min-h-[101.33px]"
           >
             <div>
