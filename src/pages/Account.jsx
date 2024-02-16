@@ -11,10 +11,12 @@ const Account = () => {
 
   const handleLogOut = (user) => {
     localStorage.clear();
-    //google
-    google.accounts.id.revoke(user.email, (done) => {
-      console.log("consent revoked");
-    });
+    const auth2 = window.gapi.auth2.getAuthInstance();
+    if (auth2 != null) {
+      auth2.signOut().then(() => {
+        console.log("Google user signed out.");
+      });
+    }
     axios
       .get("https://amazon-clone-votv.onrender.com/user/logout", {
         withCredentials: true,
