@@ -6,17 +6,10 @@ import { myContext } from "../App";
 
 const Account = () => {
   const { setCartCount } = useContext(myContext);
-  const { user } = useContext(myContext);
   const navigate = useNavigate();
 
-  const handleLogOut = (user) => {
+  const handleLogOut = () => {
     localStorage.clear();
-    const auth2 = window.gapi.auth2.getAuthInstance();
-    if (auth2 != null) {
-      auth2.signOut().then(() => {
-        console.log("Google user signed out.");
-      });
-    }
     axios
       .get("https://amazon-clone-votv.onrender.com/user/logout", {
         withCredentials: true,
@@ -159,7 +152,7 @@ const Account = () => {
             </div>
           </div>
           <div
-            onClick={() => handleLogOut(user)}
+            onClick={handleLogOut}
             className=" cursor-pointer border flex p-2 rounded min-h-[101.33px]"
           >
             <div>
