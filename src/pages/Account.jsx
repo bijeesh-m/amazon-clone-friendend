@@ -11,9 +11,6 @@ const Account = () => {
 
   const handleLogOut = (user) => {
     localStorage.clear();
-    google.accounts.id.revoke(user.email, (done) => {
-      console.log("consent revoked");
-    });
     axios
       .get("https://amazon-clone-votv.onrender.com/user/logout", {
         withCredentials: true,
