@@ -14,7 +14,6 @@ const UserOrders = () => {
         withCredentials: true,
       })
       .then((res) => {
-        console.log(res);
         setOrders(res.data);
         toast.remove(toastId);
       })
@@ -29,7 +28,6 @@ const UserOrders = () => {
   const nextPage = () => {
     setPage((prev) => prev + 1);
   };
-  console.log(orders.length);
 
   return (
     <div className="w-full min-h-[100vh]  flex items-center flex-col p-4 ">
