@@ -4,7 +4,7 @@ const HomeCarousel = () => {
   const [index, setIndex] = useState(0);
   const slides = [
     {
-      url: "https://res.cloudinary.com/dunf6rko6/image/upload/v1706528262/1._CB583514833__kxl7cp.jpg",
+      url: "https://res.cloudinary.com/dunf6rko6/image/upload/v1744797030/993415_ft6g9p.jpg",
     },
     {
       url: "https://res.cloudinary.com/dunf6rko6/image/upload/v1706528262/D92807365-_1_Tallhero_2xx._CB598669664__xqllft.jpg",
